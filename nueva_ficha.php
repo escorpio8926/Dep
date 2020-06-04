@@ -108,7 +108,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     </tr>
     <tr>
         <th colspan="2" style="text-align: justify;">
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Apellido: <input type="text" style="width: 70%" class="texto" maxlength="40" name="apellido" id="apellido"  value = "<?php print $apellido ?>" oninput="checkLengthq()" onkeydown="return tab_btn1(event,getElementById('apellido'),getElementById('nombre'))" tabindex="3" disabled required>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Apellido: <input type="text" style="width: 70.2%" class="texto" maxlength="40" name="apellido" id="apellido"  value = "<?php print $apellido ?>" oninput="checkLengthq()" onkeydown="return tab_btn1(event,getElementById('apellido'),getElementById('nombre'))" tabindex="3" disabled required>
         </th>
 
     </tr>
@@ -155,7 +155,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
 
     <tr>
         <th colspan="2"  style="text-align: justify;">
-           &nbsp;&nbsp;&nbsp;&nbsp;Localidad:<input type="text" class="texto" style="width: 70%" maxlength="40" name="localidad" id="localidad" oninput="checkLengtht()" onkeydown="return tab_btn1(event,getElementById('localidad'),getElementById('provincia'))"  value ="<?php print $localidad ?>" tabindex="10" disabled required>
+           &nbsp;&nbsp;&nbsp;&nbsp;Localidad:<input type="text" class="texto" style="width: 70.4%" maxlength="40" name="localidad" id="localidad" oninput="checkLengtht()" onkeydown="return tab_btn1(event,getElementById('localidad'),getElementById('provincia'))"  value ="<?php print $localidad ?>" tabindex="10" disabled required>
         </th>
 
     </tr>

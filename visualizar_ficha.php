@@ -102,7 +102,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
 
         <th colspan="1"  style="text-align: justify;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.N.I.: <input type="number" style="width:75%" class="dni" min="500000" max="99999999" name="dni" id="dni"  value = "<?php print $dni ?>" tabindex="2" onkeypress="return check(event,value)" oninput="checkLength2()" <?php print $s ?> readonly>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.N.I.: <input type="number" style="width:30%" class="dni" min="500000" max="99999999" name="dni" id="dni"  value = "<?php print $dni ?>" tabindex="2" onkeypress="return check(event,value)" oninput="checkLength2()" <?php print $s ?> readonly>
         </th>
 
     </tr>
@@ -148,32 +148,32 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr><th><p> </p></th></tr>
     <tr>
         <th colspan="2"  style="text-align: justify;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barrio:<input type="text" class="texto" style="width: 83.5%;" maxlength="40" name="barrio" id="barrio"  value = "<?php print $barrio ?>" tabindex="9" oninput="checkLengthr()" onkeydown="return tab_btnb(event,getElementById('barrio'),getElementById('localidad'))" readonly>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barrio:<input type="text" class="texto" style="width: 70.5%;" maxlength="40" name="barrio" id="barrio"  value = "<?php print $barrio ?>" tabindex="9" oninput="checkLengthr()" onkeydown="return tab_btnb(event,getElementById('barrio'),getElementById('localidad'))" readonly>
         </th>
 
     </tr>
 
     <tr>
         <th colspan="2"  style="text-align: justify;">
-           &nbsp;&nbsp;&nbsp;&nbsp;Localidad:<input type="text" class="texto" style="width: 83.5%" maxlength="40" name="localidad" id="localidad" oninput="checkLengtht()" onkeydown="return tab_btn1(event,getElementById('localidad'),getElementById('provincia'))"  value ="<?php print $localidad ?>" tabindex="10" readonly>
+           &nbsp;&nbsp;&nbsp;&nbsp;Localidad:<input type="text" class="texto" style="width: 70.4%" maxlength="40" name="localidad" id="localidad" oninput="checkLengtht()" onkeydown="return tab_btn1(event,getElementById('localidad'),getElementById('provincia'))"  value ="<?php print $localidad ?>" tabindex="10" readonly>
         </th>
 
     </tr>
 
     <tr>
         <th colspan="2"  style="text-align: justify;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provincia:<input type="text" class="texto" style="width: 83.3%" maxlength="40" name="provincia" id="provincia" oninput="checkLengthy()" onkeydown="return tab_btn1(event,getElementById('provincia'),getElementById('padron'))"  value = "<?php print $provincia ?>" tabindex="11" readonly>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provincia:<input type="text" class="texto" style="width: 70.3%" maxlength="40" name="provincia" id="provincia" oninput="checkLengthy()" onkeydown="return tab_btn1(event,getElementById('provincia'),getElementById('padron'))"  value = "<?php print $provincia ?>" tabindex="11" readonly>
         </th>
 
     </tr>
    <tr>
 
-        <th colspan="1"  style="text-align: right;">
-          N° padrón catastral:<input type="text" class="entero" maxlength="6" minlength="6"
-             style="width: 58%" name="padron" id="padron" value ="<?php print $padron ?>" tabindex="12" onkeydown="return tab_btn11(event,getElementById('padron'),getElementById('telcon'))" readonly >
+        <th colspan="1"  style="text-align: left;">
+          &nbsp;&nbsp;&nbsp;&nbsp;N° padrón catastral:<input type="text" class="entero" maxlength="6" minlength="6"
+             style="width: 30%" name="padron" id="padron" value ="<?php print $padron ?>" tabindex="12" onkeydown="return tab_btn11(event,getElementById('padron'),getElementById('telcon'))" readonly >
         </th>
-        <th colspan="1"  style="text-align: justify;">
-           &nbsp;&nbsp;Teléfono de contacto: <input type="text" class="entero" maxlength="10" placeholder="Ej. 3815484027" style="width: 48.7%"  name="telcon" id="telcon"  value = "<?php print $telcon ?>" tabindex="13" onkeypress="return check(event,value)"  onkeydown="return tab_btn11(event,getElementById('telcon'),getElementById('t_ali'))" readonly>
+        <th colspan="1"  style="text-align: left;">
+           &nbsp;&nbsp;Teléfono de contacto: <input type="text" class="entero" maxlength="10" placeholder="Ej. 3815484027" style="width: 30.7%"  name="telcon" id="telcon"  value = "<?php print $telcon ?>" tabindex="13" onkeypress="return check(event,value)"  onkeydown="return tab_btn11(event,getElementById('telcon'),getElementById('t_ali'))" readonly>
         </th>
 
     </tr>
