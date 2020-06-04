@@ -130,7 +130,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
             Calle:<input type="text" class="texto" style="width: 76%" name="calle" id="calle"  value = "<?php print $calle ?>" tabindex="5" oninput="checkLengthe()" onkeydown="return tab_btn1(event,getElementById('calle'),getElementById('nro'))" readonly>
         </th>
         <th colspan="1"  style="text-align: justify;">
-           &nbsp;&nbsp; Nro:&nbsp; <input type="text" class="entero" style="width: 40%"  maxlength="10" name="nro" id="nro"  value = "<?php print $nro ?>" tabindex="6"  onkeydown="return tab_btn2(event,getElementById('nro'),getElementById('barrio'),getElementById('piso'))" readonly>
+           &nbsp;&nbsp; Nro:&nbsp; <input type="text" class="entero" style="width: 50%"  maxlength="10" name="nro" id="nro"  value = "<?php print $nro ?>" tabindex="6"  onkeydown="return tab_btn2(event,getElementById('nro'),getElementById('barrio'),getElementById('piso'))" readonly>
         </th>
 
     </tr>
@@ -141,7 +141,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
             Piso:<input type="text" class="numero" style="width: 76%"  name="piso" id="piso" class="cantidad" value="<?php print $piso ?>" tabindex="7" onkeydown="return tab_btn11(event,getElementById('piso'),getElementById('dpto'))" readonly>
         </th>
         <th colspan="1"  style="text-align: justify;">
-            &nbsp;&nbsp;Dpto: <input type="text" class="texto" style="width: 40%"  name="dpto" id="dpto"  value ="<?php print $dpto ?>" onkeydown="return tab_btn1(event,getElementById('dpto'),getElementById('barrio'))" tabindex="8" readonly>
+            &nbsp;&nbsp;Dpto: <input type="text" class="texto" style="width: 50%"  name="dpto" id="dpto"  value ="<?php print $dpto ?>" onkeydown="return tab_btn1(event,getElementById('dpto'),getElementById('barrio'))" tabindex="8" readonly>
         </th>
 
     </tr>

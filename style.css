@@ -686,15 +686,15 @@ body {
 
 #csslogi {
     position: absolute;
-    bottom: 83.5%;
+    bottom: 89%;
     left;
     background:transparent;
     border-radius: 10%;
     list-style-type: none;
     margin: 0 auto; 
     padding: 0;
-    height: auto; 
-    width: 13%;
+    height: 30px; 
+    width: 10%;
     text-align: center;
 }
 
@@ -709,7 +709,7 @@ body {
     font-family: Tahoma;
    font-size: 120%;
 
-    line-height: 20%;
+    line-height: 30%;
     text-decoration: none;
     /* animamos el cambio de color de los textos */
     -webkit-transition: color .2s ease-in-out;
