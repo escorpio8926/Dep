@@ -23,13 +23,14 @@
 <body>
 	<div id="Cabecera" >	
 		<div>
-			&nbsp;&nbsp;
-			<img src="imagenes/isologon.png" style="margin-left: 1%;margin-left: 2%" width="200"  height="90" alt="LOGO" />
+					<img src="imagenes/pa.png" style="width: 100%"> <br><br><br><br><br><br>
+			
 		</div>
-		<h2 >Secretaría de promoción social y Desarrollo inclusivo
-			<img src="imagenes/s.png" width="325" style=" float: right;margin-top: 1%;width: 28%;" >
-		</h2>
-		<h3>Sistema de Gestión de Datos</h3>
-	</div>
+	
+	
+		
+		
+		
+		</div>
 
 
