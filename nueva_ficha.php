@@ -118,10 +118,10 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
         </th>
 
     </tr>
-
-    <tr><th><p> </p></th></tr>
+        
+     <tr><th><p> </p></th></tr>
     <tr>
-        <th colspan="2" style="border-top-sty le: solid;border-bottom-style: solid;"><h3>DOMICILIO</h3></th>
+        <th colspan="2" style="border-top-style: solid;border-bottom-style: solid;"><h3>DOMICILIO</h3></th>
     </tr>
     <tr><th><p> </p></th></tr>
     <tr>
@@ -168,9 +168,9 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     </tr>
    <tr>
 
-        <th colspan="1"  style="text-align: right;">
-          N° padrón catastral:<input type="text" class="entero" maxlength="6" minlength="6"
-             style="width: 30%" name="padron" id="padron" value ="<?php print $padron ?>" tabindex="12" onkeydown="return tab_btn11(event,getElementById('padron'),getElementById('telcon'))" disabled >
+        <th style="text-align: left">
+         &nbsp;&nbsp;&nbsp;&nbsp;N° padrón catastral:<input type="text" class="entero" maxlength="6" minlength="6"
+             style="width: 30%;" name="padron" id="padron" value ="<?php print $padron ?>" tabindex="12" onkeydown="return tab_btn11(event,getElementById('padron'),getElementById('telcon'))" disabled >
         </th>
         <th colspan="1"  style="text-align: justify;">
            &nbsp;&nbsp;Teléfono de contacto: <input type="text" class="entero" maxlength="10" placeholder="Ej. 3815484027" style="width: 30.7%"  name="telcon" id="telcon"  value = "<?php print $telcon ?>" tabindex="13" onkeypress="return check(event,value)"  onkeydown="return tab_btn11(event,getElementById('telcon'),getElementById('t_ali'))" disabled>

@@ -6,12 +6,12 @@ include 'classItems.php';
 print '<div id="csslogi">';
 if(!isset($_SESSION['nick']))
 {
-    print '<img src="./imagenes/user_negado.png" style="height: 40px;">';
+    print '<img src="./imagenes/user_negado.png" style="height: 25px;">';
     print '<a style="color: #ed1c24;" href="index.php">Iniciar Sesión</a>';
 }
 else
 {
-    print '<img src="./imagenes/user.png" style="height: 40px;">';
+    print '<img src="./imagenes/user.png" style="height: 25px;">';
     print '<h5>'.$_SESSION['apellido'].' '. $_SESSION['nombre'].'</h5>';
     print '<a href="Logoff.php"> Cerrar sesión </a></p>';       
 }

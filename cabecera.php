@@ -22,10 +22,10 @@
 </head>
 <body>
 	<div id="Cabecera" >	
-		<div>
+	
 					<img src="imagenes/pa.png" style="width: 100%"> 
 			
-		</div>
+	
 	
 	
 		

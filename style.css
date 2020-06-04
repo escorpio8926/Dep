@@ -95,7 +95,7 @@ body {
  left: auto;
  top: auto;
  width: auto;
- height: 85px;
+ height: 100px;
  visibility: visible;
  border: #666 solid;
  border-radius: 5px;
@@ -686,15 +686,15 @@ body {
 
 #csslogi {
     position: absolute;
-    bottom: 75.5%;
-    left: 1%;
+    bottom: 80.5%;
+    left;
     background:transparent;
     border-radius: 10%;
     list-style-type: none;
     margin: 0 auto; 
     padding: 0;
     height: auto; 
-    width: 10%;
+    width: 13%;
     text-align: center;
 }
 
@@ -707,7 +707,9 @@ body {
     color: #EFEFEF;
     display: block;
     font-family: Tahoma;
- 
+   font-size: 120%;
+
+    line-height: 20%;
     text-decoration: none;
     /* animamos el cambio de color de los textos */
     -webkit-transition: color .2s ease-in-out;
