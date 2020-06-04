@@ -23,7 +23,7 @@
 <body>
 	<div id="Cabecera" >	
 		<div>
-					<img src="imagenes/pa.png" style="width: 100%"> <br><br><br><br><br><br>
+					<img src="imagenes/pa.png" style="width: 100%"> 
 			
 		</div>
 	
