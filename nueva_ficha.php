@@ -80,7 +80,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <input type="hidden" name="id_exp" value="<?php print $id_exp ?>">
     <input type="hidden" name="id_user" value="<?php print $id_user ?>">
     <br></br>
-    <table>
+    <table >
 
         <th colspan="3" style="border-bottom-style: solid;"><h3>FORMULARIO DE ALTA</h3></th>
 
