@@ -80,7 +80,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <input type="hidden" name="id_exp" value="<?php print $id_exp ?>">
     <input type="hidden" name="id_user" value="<?php print $id_user ?>">
     <br></br>
-    <table>
+    <table style="width: 65%">
 
         <th colspan="3" style="border-bottom-style: solid;"><h3>FORMULARIO DE ALTA</h3></th>
 
@@ -101,19 +101,19 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr><th><p> </p></th></tr>
     <tr>
 
-        <th colspan="1"  style="text-align: center;text-indent: 2.4%">
-            D.N.I.: <input type="number" style="width:33%" class="dni" min="500000" max="99999999" name="dni" id="dni"  value = "<?php print $dni ?>" tabindex="2" onkeypress="return check(event,value)" oninput="checkLength2()" <?php print $s ?> readonly>
+        <th colspan="1"  style="text-align: center;">
+            D.N.I.: <input type="number" style="width:30%" class="dni" min="500000" max="99999999" name="dni" id="dni"  value = "<?php print $dni ?>" tabindex="2" onkeypress="return check(event,value)" oninput="checkLength2()" <?php print $s ?> readonly>
         </th>
 
     </tr>
     <tr>
-       <th colspan="2" style="text-align: center;text-indent: 1.9%">
+       <th colspan="2" style="text-align: center;text-indent: 3.0%">
            Apellido: <input type="text" style="width: 70.2%" class="texto" maxlength="40" name="apellido" id="apellido"  value = "<?php print $apellido ?>" oninput="checkLengthq()" onkeydown="return tab_btn1(event,getElementById('apellido'),getElementById('nombre'))" tabindex="3" readonly>
         </th>
 
     </tr>
     <tr>
-         <th colspan="2"  style="text-align: center;text-indent: 2.5%">
+         <th colspan="2"  style="text-align: center;text-indent: 3.5%">
         Nombre: <input type="text" class="texto" style="width: 70.5%" maxlength="40" name="nombre" id="nombre"  value = "<?php print $nombre ?>" oninput="checkLengthw()" onkeydown="return tab_btn1(event,getElementById('nombre'),getElementById('calle'))" tabindex="4" readonly>
         </th>
 
@@ -147,22 +147,22 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     </tr>
     <tr><th><p> </p></th></tr>
     <tr>
-        <th colspan="2"  style="text-align: center;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barrio:<input type="text" class="texto" style="width: 70.5%;" maxlength="40" name="barrio" id="barrio"  value = "<?php print $barrio ?>" tabindex="9" oninput="checkLengthr()" onkeydown="return tab_btnb(event,getElementById('barrio'),getElementById('localidad'))" readonly>
+        <th colspan="2"  style="text-align: center; ">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barrio:<input type="text" class="texto" style="width: 69%;" maxlength="40" name="barrio" id="barrio"  value = "<?php print $barrio ?>" tabindex="9" oninput="checkLengthr()" onkeydown="return tab_btnb(event,getElementById('barrio'),getElementById('localidad'))" readonly>
         </th>
 
     </tr>
 
     <tr>
         <th colspan="2"  style="text-align: center;">
-           &nbsp;Localidad:<input type="text" class="texto" style="width: 70.4%" maxlength="40" name="localidad" id="localidad" oninput="checkLengtht()" onkeydown="return tab_btn1(event,getElementById('localidad'),getElementById('provincia'))"  value ="<?php print $localidad ?>" tabindex="10" readonly>
+           &nbsp;Localidad:<input type="text" class="texto" style="width: 69.4%" maxlength="40" name="localidad" id="localidad" oninput="checkLengtht()" onkeydown="return tab_btn1(event,getElementById('localidad'),getElementById('provincia'))"  value ="<?php print $localidad ?>" tabindex="10" readonly>
         </th>
 
     </tr>
 
     <tr>
         <th colspan="2"  style="text-align: center;">
-            &nbsp;&nbsp;Provincia:<input type="text" class="texto" style="width: 70.3%" maxlength="40" name="provincia" id="provincia" oninput="checkLengthy()" onkeydown="return tab_btn1(event,getElementById('provincia'),getElementById('padron'))"  value = "<?php print $provincia ?>" tabindex="11" readonly>
+            &nbsp;&nbsp;Provincia:<input type="text" class="texto" style="width: 69.3%" maxlength="40" name="provincia" id="provincia" oninput="checkLengthy()" onkeydown="return tab_btn1(event,getElementById('provincia'),getElementById('padron'))"  value = "<?php print $provincia ?>" tabindex="11" readonly>
         </th>
 
     </tr>
