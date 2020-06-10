@@ -220,19 +220,19 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
         <tr>
         <th colspan="2"  style="text-align: center;">
             <b>¿Algún integrante de este hogar recibe el programa Vivir Mejor?</b>
-            <input type="number" value="<?php print $muni1 ?>" name="muni1" class="sin" id="muni1" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7a()" onkeydown="return tab_btn1(event,getElementById('muni1'),getElementById('muni2'))" tabindex="19" required disabled><br>
+            <input align="right" type="number" value="<?php print $muni1 ?>" name="muni1" class="sin" id="muni1" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7a()" onkeydown="return tab_btn1(event,getElementById('muni1'),getElementById('muni2'))" tabindex="19" required disabled><br>
         </th> 
     </tr>
         <tr>
         <th colspan="2"  style="text-align: center;">
             <b>¿Algún integrante de este hogar recibe el programa Inclusión Social con Ingresos?</b>
-            <input type="number" value="<?php print $muni2 ?>" name="muni2" class="sin" id="muni2" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7b()" onkeydown="return tab_btn1(event,getElementById('muni2'),getElementById('muni3'))" tabindex="20" required disabled><br>
+            <input align="right" type="number" value="<?php print $muni2 ?>" name="muni2" class="sin" id="muni2" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7b()" onkeydown="return tab_btn1(event,getElementById('muni2'),getElementById('muni3'))" tabindex="20" required disabled><br>
         </th> 
     </tr>
         <tr>
         <th colspan="2"  style="text-align: center;">
             <b>¿Algún integrante de este hogar recibe el programa Acompañamiento integral al adulto mayor?</b>
-            <input type="number" value="<?php print $muni3 ?>" name="muni3" class="sin" id="muni3" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7c()" onkeydown="return tab_btn1(event,getElementById('muni3'),getElementById('encuestador'))" tabindex="21" required disabled><br>
+            <input align="left" type="number" value="<?php print $muni3 ?>" name="muni3" class="sin" id="muni3" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7c()" onkeydown="return tab_btn1(event,getElementById('muni3'),getElementById('encuestador'))" tabindex="21" required disabled><br>
         </th> 
     </tr>
 
