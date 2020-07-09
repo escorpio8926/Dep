@@ -2,8 +2,8 @@
 class conect{
 
   private $conect; 
-  private $total_consultas;
-  private $consulta;
+  private $f;
+  private $fi;
 
   public function __construct(){ 
     if(!isset($this->conect)){
@@ -14,33 +14,33 @@ class conect{
 
   }
 
-  public function consulta($consulta){ 
+  public function fi($fi){ 
 
-    $this->total_consultas++; 
-    $this->consulta = pg_exec($this->conect,$consulta);
-    if(!$this->consulta){ 
+    $this->f++; 
+    $this->fi = pg_exec($this->conect,$fi);
+    if(!$this->fi){ 
       echo 'PostgreSql Error: ' . pg_last_error();
-      echo $consulta;
+      echo $fi;
       exit;
     }
-    return $this->consulta;
+    return $this->fi;
   }
 
   public function fetch_array(){
-   return pg_fetch_array($this->consulta);
+   return pg_fetch_array($this->fi);
  }
 
  public function num_rows(){
-   return pg_num_rows($this->consulta);
+   return pg_num_rows($this->fi);
  }
 
- public function getTotalConsultas(){
-   return $this->total_consultas; 
+ public function getTotalfis(){
+   return $this->f; 
  }
 
   public function getAffect() { // devuelve las cantidad de filas afectadas
 
-   return pg_affected_rows($this->consulta);
+   return pg_affected_rows($this->fi);
    
  }
 
@@ -50,18 +50,18 @@ class conect{
 
   }	
 
-  public function Clean(){ // libera la consulta
+  public function Clean(){ // libera la fi
 
-    pg_free_result($this->consulta);    
+    pg_free_result($this->fi);    
 
   }
   
   public function fetchAll() {
 
     $rows=array();
-    if ($this->consulta)
+    if ($this->fi)
     {
-     while($row=  pg_fetch_array($this->consulta))
+     while($row=  pg_fetch_array($this->fi))
      {
       $rows[]=$row;
     }
