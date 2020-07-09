@@ -1,7 +1,7 @@
 ﻿<?php
 include 'cabecera.php';
 include 'menu.php';
-include 'classFicha.php';
+
 require('librerias/ExcelLibrary/PHPExcel.php');
 ?>
 
