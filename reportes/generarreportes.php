@@ -1,6 +1,8 @@
 <?php
 header('Content-Type: application/vdn.ms-excel');
 header('Content-Disposition: attachment; filename=reporte.xlsx');
+header('Pragma: no-cache'); 
+header('Expires: 0'); 
 
 require('../librerias/ExcelLibrary/PHPExcel.php');
 require('../classconect.php');
