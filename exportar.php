@@ -8,7 +8,7 @@ require('librerias/ExcelLibrary/PHPExcel.php');
 <div id="cuerpo">
 
 
-    <form method="get" action="reportes/generarreportes.php/"> 
+    <form method="get" action="reportes/generarreportes.php"> 
 
         <table>
           <tr>
