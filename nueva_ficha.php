@@ -7,6 +7,7 @@ include 'foot.php';
 if(isset($_SESSION['nick']) and isset($_SESSION['habil'])){
     $id_exp="";
     $fecha_ei="";
+    $entre="";
     $dni="";
     $apellido="";
     $nombre="";
@@ -36,6 +37,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
         $NuevaFicha=new Ficha($_GET['mdId']);  // instancio la clase identificacion pasandole el nro de identificacion, de esta forma lo busca
         $id_exp=$NuevaFicha->getid_exp();
         $fecha_ei=$NuevaFicha->getfecha_ei(); // setea los datos
+        $entre=$NuevaFicha->getentre();
         $dni=$NuevaFicha->getDni();
         $apellido=$NuevaFicha->getApellido();
         $nombre=$NuevaFicha->getNombre();
@@ -92,7 +94,11 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     </tr>
     <tr>
         <th></th>
-        <th style="text-align: :justify">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="date" name="fecha_ei" id="fecha_ei" value = "<?php print $fecha_ei ?>" oninput="dip()" onkeydown="return tab_btn(event,getElementById('fecha_ei'),getElementById('apellido'),getElementById('dni'))" class="fecha" tabindex="1" required disabled></th>
+        <th style="text-align: :justify">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha&nbsp;&nbsp; <input type="date" name="fecha_ei" id="fecha_ei" value = "<?php print $fecha_ei ?>" oninput="dip()" onkeydown="return tab_btntyi(event,getElementById('fecha_ei'),getElementById('entre'))" class="fecha" tabindex="1" required disabled></th>
+    </tr>
+     <tr>
+        <th></th>
+        <th style="text-align: :justify">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entrevista&nbsp;&nbsp; <input type="text" maxlength="1" name="entre" id="entre" class="oby" value = "<?php print $entre ?>" oninput="dipis()" onkeydown="return tab_btn(event,getElementById('entre'),getElementById('apellido'),getElementById('dni'))"  tabindex="2" required disabled></th>
     </tr>
     <tr><th><p> </p></th></tr>
     <tr>
@@ -102,19 +108,19 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
 
         <th colspan="1"  style="text-align: center;text-indent:">
-            D.N.I: <input type="number" style="width:30%" class="dni" min="500000" max="99999999" name="dni" id="dni"  value = "<?php print $dni ?>" tabindex="2" onkeypress="return check(event,value)" oninput="checkLength2()" <?php print $s ?> disabled required>
+            D.N.I: <input type="number" style="width:30%" class="dni" min="500000" max="99999999" name="dni" id="dni"  value = "<?php print $dni ?>" tabindex="3" onkeypress="return check(event,value)" oninput="checkLength2()" <?php print $s ?> disabled required>
         </th>
 
     </tr>
     <tr>
         <th colspan="2" style="text-align: center;text-indent: 2.5%">
-           Apellido: <input type="text" style="width: 70.2%" class="texto" maxlength="40" name="apellido" id="apellido"  value = "<?php print $apellido ?>" oninput="checkLengthq()" onkeydown="return tab_btn1(event,getElementById('apellido'),getElementById('nombre'))" tabindex="3" disabled required>
+           Apellido: <input type="text" style="width: 70.2%" class="texto" maxlength="40" name="apellido" id="apellido"  value = "<?php print $apellido ?>" oninput="checkLengthq()" onkeydown="return tab_btn1(event,getElementById('apellido'),getElementById('nombre'))" tabindex="4" disabled required>
         </th>
 
     </tr>
     <tr>
         <th colspan="2"  style="text-align: center;text-indent: 3.1%">
-           Nombre: <input type="text" class="texto" style="width: 70.5%" maxlength="40" name="nombre" id="nombre"  value = "<?php print $nombre ?>"  oninput="checkLengthw()" onkeydown="return tab_btn1(event,getElementById('nombre'),getElementById('calle'))" tabindex="4" disabled required>
+           Nombre: <input type="text" class="texto" style="width: 70.5%" maxlength="40" name="nombre" id="nombre"  value = "<?php print $nombre ?>"  oninput="checkLengthw()" onkeydown="return tab_btn1barrio(event,getElementById('nombre'),getElementById('calle'),getElementById('barrio'))" tabindex="5" disabled required>
         </th>
 
     </tr>
@@ -127,10 +133,10 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
 
         <th colspan="1"  style="text-align: right;">
-            Calle:<input type="text" class="texto" style="width: 59%" name="calle" id="calle"  value = "<?php print $calle ?>" tabindex="5" oninput="checkLengthe()" onkeydown="return tab_btn1(event,getElementById('calle'),getElementById('nro'))" disabled required>
+            Calle:<input type="text" class="texto" style="width: 59%" name="calle" id="calle"  value = "<?php print $calle ?>" tabindex="6" oninput="checkLengthe()" onkeydown="return tab_btn1(event,getElementById('calle'),getElementById('nro'))" disabled >
         </th>
         <th colspan="1"  style="text-align: justify;">
-           &nbsp;&nbsp; Nro:&nbsp; <input type="text" class="entero" style="width: 50%"  maxlength="10" name="nro" id="nro"  value = "<?php print $nro ?>" tabindex="6"  onkeydown="return tab_btn2(event,getElementById('nro'),getElementById('barrio'),getElementById('piso'))" disabled>
+           &nbsp;&nbsp; Nro:&nbsp; <input type="text" class="entero" style="width: 50%"  maxlength="10" name="nro" id="nro"  value = "<?php print $nro ?>" tabindex="7"  onkeydown="return tab_btn2(event,getElementById('nro'),getElementById('barrio'),getElementById('piso'))" disabled>
         </th>
 
     </tr>
@@ -138,31 +144,31 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
 
         <th class="cantidad" colspan="1"  style="text-align: right;">
-            Piso: <input type="text" class="numero" style="width: 59%"  name="piso" id="piso" class="cantidad" value="<?php print $piso ?>" tabindex="7" onkeydown="return tab_btn11(event,getElementById('piso'),getElementById('dpto'))" disabled>
+            Piso: <input type="text" class="numero" style="width: 59%"  name="piso" id="piso" class="cantidad" value="<?php print $piso ?>" tabindex="8" onkeydown="return tab_btn11(event,getElementById('piso'),getElementById('dpto'))" disabled>
         </th>
         <th colspan="1"  style="text-align: justify;">
-            &nbsp;&nbsp;Dpto: <input type="text" class="texto" style="width: 50%"  name="dpto" id="dpto"  value ="<?php print $dpto ?>" onkeydown="return tab_btn1(event,getElementById('dpto'),getElementById('barrio'))" tabindex="8" disabled>
+            &nbsp;&nbsp;Dpto: <input type="text" class="texto" style="width: 50%"  name="dpto" id="dpto"  value ="<?php print $dpto ?>" onkeydown="return tab_btn1(event,getElementById('dpto'),getElementById('barrio'))" tabindex="9" disabled>
         </th>
 
     </tr>
     <tr><th><p> </p></th></tr>
     <tr>
         <th colspan="2"  style="text-align: center;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barrio: <input type="text" class="texto" style="width: 70.5%;" maxlength="40" name="barrio" id="barrio"  value = "<?php print $barrio ?>" tabindex="9" oninput="checkLengthr()" onkeydown="return tab_btnb(event,getElementById('barrio'),getElementById('localidad'))" disabled>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barrio: <input type="text" class="texto" style="width: 70.5%;" maxlength="40" name="barrio" id="barrio"  value = "<?php print $barrio ?>" tabindex="10" oninput="checkLengthr()" onkeydown="return tab_btnb(event,getElementById('barrio'),getElementById('localidad'))" disabled>
         </th>
 
     </tr>
 
     <tr>
         <th colspan="2"  style="text-align: center;">
-           &nbsp;&nbsp;&nbsp;&nbsp;Localidad: <input type="text" class="texto" style="width: 70.6%" maxlength="40" name="localidad" id="localidad" oninput="checkLengtht()" onkeydown="return tab_btn1(event,getElementById('localidad'),getElementById('provincia'))"  value ="<?php print $localidad ?>" tabindex="10" disabled required>
+           &nbsp;&nbsp;&nbsp;&nbsp;Localidad: <input type="text" class="texto" style="width: 70.6%" maxlength="40" name="localidad" id="localidad" oninput="checkLengtht()" onkeydown="return tab_btn1(event,getElementById('localidad'),getElementById('provincia'))"  value ="<?php print $localidad ?>" tabindex="11" disabled required>
         </th>
 
     </tr>
 
     <tr>
         <th colspan="2"  style="text-align: center;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provincia: <input type="text" class="texto" style="width: 70.3%" maxlength="40" name="provincia" id="provincia" oninput="checkLengthy()" onkeydown="return tab_btn1(event,getElementById('provincia'),getElementById('padron'))"  value = "<?php print $provincia ?>" tabindex="11" disabled required>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provincia: <input type="text" class="texto" style="width: 70.3%" maxlength="40" name="provincia" id="provincia" oninput="checkLengthy()" onkeydown="return tab_btn1(event,getElementById('provincia'),getElementById('padron'))"  value = "<?php print $provincia ?>" tabindex="12" disabled required>
         </th>
 
     </tr>
@@ -170,10 +176,10 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
 
         <th style="text-align: right">
          N° padrón catastral:<input type="text" class="entero" maxlength="6" minlength="6"
-             style="width: 42%;" name="padron" id="padron" value ="<?php print $padron ?>" tabindex="12" onkeydown="return tab_btn11(event,getElementById('padron'),getElementById('telcon'))" disabled >
+             style="width: 42%;" name="padron" id="padron" value ="<?php print $padron ?>" tabindex="13" onkeydown="return tab_btn11(event,getElementById('padron'),getElementById('telcon'))" disabled >
         </th>
         <th colspan="1"  style="text-align: justify;">
-           &nbsp;&nbsp;Teléfono de contacto: <input type="text" class="entero" maxlength="10" placeholder="Ej. 3815484027" style="width: 30.7%"  name="telcon" id="telcon"  value = "<?php print $telcon ?>" tabindex="13" onkeypress="return check(event,value)"  onkeydown="return tab_btn11(event,getElementById('telcon'),getElementById('t_ali'))" disabled>
+           &nbsp;&nbsp;Teléfono de contacto: <input type="text" class="entero" maxlength="10" placeholder="Ej. 3815484027" style="width: 30.7%"  name="telcon" id="telcon"  value = "<?php print $telcon ?>" tabindex="14" onkeypress="return check(event,value)"  onkeydown="return tab_btn11(event,getElementById('telcon'),getElementById('t_ali'))" disabled>
         </th>
 
     </tr>
@@ -185,14 +191,14 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
         <th colspan="2">
             <b> ¿Algún integrante de este hogar recibe tarjeta alimentaria?</b>
-            <input type="number"  value="<?php print $t_ali ?>" name="t_ali" class="sin" id="t_ali" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength4()" onkeydown="return tab_btn1(event,getElementById('t_ali'),getElementById('p_ali'))" tabindex="14" required disabled>
+            <input type="number"  value="<?php print $t_ali ?>" name="t_ali" class="sin" id="t_ali" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength4()" onkeydown="return tab_btn1(event,getElementById('t_ali'),getElementById('p_ali'))" tabindex="15" required disabled>
 
         </th> 
     </tr>
     <tr>
         <th colspan="2"  style="text-align: center;">
             <b>¿Algún integrante de este hogar recibe otro programa alimentario?</b>
-            <input type="number" value="<?php print $p_ali ?>" name="p_ali" class="sin" id="p_ali" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)" onkeypress="return check(event,value)" oninput="checkLength5()" onkeydown="return tab_btn1(event,getElementById('p_ali'),getElementById('meren'))" tabindex="15" required disabled>
+            <input type="number" value="<?php print $p_ali ?>" name="p_ali" class="sin" id="p_ali" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)" onkeypress="return check(event,value)" oninput="checkLength5()" onkeydown="return tab_btn1(event,getElementById('p_ali'),getElementById('meren'))" tabindex="16" required disabled>
 
 
         </th> 
@@ -200,8 +206,8 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
         <th colspan="2"  style="text-align: center;">
             <b> ¿Algún integrante de este hogar asiste a un comedor o merendero comunitario? </b>
-            <input type="number" name="meren" value="<?php print $meren ?>" class="sin" id="meren" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"onkeypress="return check(event,value)" oninput="checkLength6()" onkeydown="return tab_btn3(event,getElementById('meren'),getElementById('meren_co'),getElementById('muni'))" tabindex="16" required  disabled><br>
-            <input type="text" style="display:none;" class="texto" name="meren_co" id="meren_co" value="<?php print $meren_co ?>" tabindex="17" placeholder="¿Cuál?" onkeydown="return tab_btn1(event,getElementById('meren_co'),getElementById('muni'))">
+            <input type="number" name="meren" value="<?php print $meren ?>" class="sin" id="meren" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"onkeypress="return check(event,value)" oninput="checkLength6()" onkeydown="return tab_btn3(event,getElementById('meren'),getElementById('meren_co'),getElementById('muni'))" tabindex="17" required  disabled><br>
+            <input type="text" style="display:none;" class="texto" name="meren_co" id="meren_co" value="<?php print $meren_co ?>" tabindex="18" placeholder="¿Cuál?" onkeydown="return tab_btn1(event,getElementById('meren_co'),getElementById('muni'))">
         </th> 
     </tr>
 
@@ -213,26 +219,26 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
         <th colspan="2"  style="text-align: center;">
             <b>¿Algún integrante de este hogar recibe el programa Taficeñitos?</b>
-            <input type="number" value="<?php print $muni ?>" name="muni" class="sin" id="muni" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7()" onkeydown="return tab_btn1(event,getElementById('muni'),getElementById('muni1'))" tabindex="18" required disabled><br>
+            <input type="number" value="<?php print $muni ?>" name="muni" class="sin" id="muni" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7()" onkeydown="return tab_btn1(event,getElementById('muni'),getElementById('muni1'))" tabindex="19" required disabled><br>
         </th> 
     </tr>
     
         <tr>
         <th colspan="2"  style="text-align: center;">
             <b>¿Algún integrante de este hogar recibe el programa Vivir Mejor?</b>
-            <input align="right" type="number" value="<?php print $muni1 ?>" name="muni1" class="sin" id="muni1" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7a()" onkeydown="return tab_btn1(event,getElementById('muni1'),getElementById('muni2'))" tabindex="19" required disabled><br>
+            <input align="right" type="number" value="<?php print $muni1 ?>" name="muni1" class="sin" id="muni1" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7a()" onkeydown="return tab_btn1(event,getElementById('muni1'),getElementById('muni2'))" tabindex="20" required disabled><br>
         </th> 
     </tr>
         <tr>
         <th colspan="2"  style="text-align: center;">
             <b>¿Algún integrante de este hogar recibe el programa Inclusión Social con Ingresos?</b>
-            <input align="right" type="number" value="<?php print $muni2 ?>" name="muni2" class="sin" id="muni2" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7b()" onkeydown="return tab_btn1(event,getElementById('muni2'),getElementById('muni3'))" tabindex="20" required disabled><br>
+            <input align="right" type="number" value="<?php print $muni2 ?>" name="muni2" class="sin" id="muni2" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7b()" onkeydown="return tab_btn1(event,getElementById('muni2'),getElementById('muni3'))" tabindex="21" required disabled><br>
         </th> 
     </tr>
         <tr>
         <th colspan="2"  style="text-align: center;">
             <b>¿Algún integrante de este hogar recibe el programa Acompañamiento integral al adulto mayor?</b>
-            <input align="left" type="number" value="<?php print $muni3 ?>" name="muni3" class="sin" id="muni3" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7c()" onkeydown="return tab_btn1(event,getElementById('muni3'),getElementById('encuestador'))" tabindex="21" required disabled><br>
+            <input align="left" type="number" value="<?php print $muni3 ?>" name="muni3" class="sin" id="muni3" min="1" max="2" style="width:13%" placeholder="SI(1) NO(2)"  onkeypress="return check(event,value)" oninput="checkLength7c()" onkeydown="return tab_btn1(event,getElementById('muni3'),getElementById('encuestador'))" tabindex="22" required disabled><br>
         </th> 
     </tr>
 
@@ -245,7 +251,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
         <tr>
         <th colspan="2"  style="text-align: center;">
             <b>Apellido y nombre</b>
-           <input type="text" style="width:50%"  class="texto" name="encuestador" id="encuestador" value="<?php print $encuestador ?>" tabindex="22" onkeypress="return check(event,value)" oninput="checkLength7d()" onkeydown="return tab_btn1(event,getElementById('encuestador'),getElementById('submitguardar'))" required disabled>
+           <input type="text" style="width:50%"  class="texto" name="encuestador" id="encuestador" value="<?php print $encuestador ?>" tabindex="23" onkeypress="return check(event,value)" oninput="checkLength7d()" onkeydown="return tab_btn1fin(event,getElementById('encuestador'),getElementById('submitguardar'),getElementById('nro'),getElementById('piso'),getElementById('dpto'))" required disabled>
 
 
         </th> 
@@ -256,7 +262,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
         
         <td colspan="2" id="boton">
              <input type="button" onclick="redirect1()" style="width:13%;margin-left:0%;" value="Cancelar" <?php print $disas ?>>
-             <input type="submit" style="text-align:center;width:13% " name="submit" id="submitguardar" value ="<?php echo $value ?>" tabindex="23" disabled></td>
+             <input type="submit" style="text-align:center;width:13% " name="submit" id="submitguardar" value ="<?php echo $value ?>" tabindex="24" disabled></td>
     </tr>
 
 </table>
@@ -444,6 +450,7 @@ if (isset($_POST['submit'])&&!is_numeric($_POST['id_exp'])) // si presiono el bo
     $NuevaFicha=new Ficha();
     $NuevaFicha->setid_exp($_POST['nro_exp']);
     $NuevaFicha->setfecha_ei($_POST['fecha_ei']); // setea los datos
+    $NuevaFicha->setentre($_POST['entre']);
     $NuevaFicha->setDni($_POST['dni']);
     $NuevaFicha->setApellido(strtoupper($_POST['apellido']));
     $NuevaFicha->setNombre(strtoupper($_POST['nombre']));
@@ -474,6 +481,7 @@ if (isset($_POST['submit'])&&is_numeric($_POST['id_exp'])) // si presiono el bot
     $NuevaFicha=new Ficha();
     $NuevaFicha->setid_exp($_POST['nro_exp']);
     $NuevaFicha->setfecha_ei($_POST['fecha_ei']); // setea los datos
+    $NuevaFicha->setentre($_POST['entre']);
     $NuevaFicha->setDni($_POST['dni']);
     $NuevaFicha->setApellido(strtoupper($_POST['apellido']));
     $NuevaFicha->setNombre(strtoupper($_POST['nombre']));
@@ -953,16 +961,28 @@ function checkLength7d()
  function dip()
   {
     
-    var dni = document.getElementById('dni');
     var fecha_ei = document.getElementById('fecha_ei');
+    var entre = document.getElementById('entre');
 
      if(fecha_ei.value > '0000-00-00')
+     {entre.disabled=false;}
+  else
+     {entre.disabled=true;}
+   
+}
+
+ function dipis()
+  {
+    
+    var dni = document.getElementById('dni');
+    var entre = document.getElementById('entre').value.length;
+
+     if(entre > 0)
      {dni.disabled=false;}
   else
      {dni.disabled=true;}
    
 }
-
 function checkLengthq()
 {   
         var fieldLength1 = document.getElementById('apellido').value.length;
@@ -981,22 +1001,22 @@ function checkLengthw()
 {   
         var fieldLength1 = document.getElementById('nombre').value.length;
         var paso = document.getElementById('calle');
-        var paso1 = document.getElementById('piso');
-        var paso2 = document.getElementById('dpto');
+        //var paso1 = document.getElementById('piso');
+        //var paso2 = document.getElementById('dpto');
         var paso3 = document.getElementById('barrio');
         
 
         if(fieldLength1 >= 1){
             paso.disabled=false;
-            paso1.disabled=false;
-            paso2.disabled=false;
+          //  paso1.disabled=false;
+           // paso2.disabled=false;
             paso3.disabled=false;
         }
         else
         {
           paso.disabled=true;
-           paso1.disabled=true;
-            paso2.disabled=true;
+          // paso1.disabled=true;
+           // paso2.disabled=true;
             paso3.disabled=true;
             
         }
@@ -1005,6 +1025,9 @@ function checkLengthe()
 {   
         var fieldLength1 = document.getElementById('calle').value.length;
         var paso = document.getElementById('nro');
+        var barrio = document.getElementById('barrio');
+        var piso = document.getElementById('piso');
+        var dpto = document.getElementById('dpto');
 
         if(fieldLength1 >= 1){
             paso.disabled=false;
@@ -1012,7 +1035,10 @@ function checkLengthe()
         else
         {
           paso.disabled=true;
-            
+          paso.value="";
+          piso.value="";
+          dpto.value="";
+            barrio.disabled=false;
         }
 }
 function checkLengthr()
@@ -1130,7 +1156,28 @@ dni.disabled=false;
   var x3=q3;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value >= '0000-00-00' && x3.value.length >= 1  ) 
+  if (t == 9 && x1.value >= 1 && x3.value.length >= 1  ) 
+  { 
+  x2.disabled=false;
+  x2.focus();
+  aux=x2.value;
+  x2.value="";
+  x2.value=aux;
+  return false;
+  }
+
+return true;
+
+  }
+
+ function tab_btntyi(event,q1,q2)
+{
+  var x1=q1;
+  var x2=q2;
+
+
+  var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+  if (t == 9 && x1.value >= '0000-00-00' ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1236,6 +1283,55 @@ return true;
 return true;
 
   }
+
+  function tab_btn1fin(event,q1,q2,q3,q4,q5)
+{
+  var x1=q1;
+  var x2=q2;
+  var x3=q3;
+  var x4=q4;
+  var x5=q5;
+
+  var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+  if (t == 9 && x1.value.length >= 1 ) 
+  { 
+  x2.disabled=false;
+  x3.disabled=false;
+  x4.disabled=false;
+  x5.disabled=false;
+  x2.focus();
+  aux=x2.value;
+  x2.value="";
+  x2.value=aux;
+  return false;
+  }
+return true;
+
+  }
+
+   function tab_btn1barrio(event,q1,q2,q3)
+{
+  var x1=q1;
+  var x2=q2;
+  var x3=q3;
+
+
+  var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+  if (t == 9 && x1.value.length >= 1 ) 
+  { 
+  x2.disabled=false;
+  x3.disabled=false;
+
+  x2.focus();
+  aux=x2.value;
+  x2.value="";
+  x2.value=aux;
+  return false;
+  }
+return true;
+
+  }
+
     function tab_btnb(event,q1,q2)
 {
   var x1=q1;

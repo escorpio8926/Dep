@@ -7,7 +7,7 @@ class conect{
 
   public function __construct(){ 
     if(!isset($this->conect)){
-      $this->conect = pg_connect("host='ec2-54-75-246-118.eu-west-1.compute.amazonaws.com' port='5432' user='dwktwenkbahucw' password='090fc846af77f51d3f15d3e97847a772643920a5246c6b479b2d454fa4946bdb'  dbname='dejb0pi4d6b3o' options='--client_encoding=UTF8'") or die('No pudo conectarse: ' . pg_last_error());
+      $this->conect = pg_connect("host='localhost' port='5432' user='postgres' password='892647As'  dbname='PEA_TAFI' options='--client_encoding=UTF8'") or die('No pudo conectarse: ' . pg_last_error());
       
 //      mysql_select_db("indicadoreseph",$this->conect) or die('No pudo selccionar db: '. mysql_error());
     }

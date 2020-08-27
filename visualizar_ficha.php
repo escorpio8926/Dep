@@ -7,6 +7,7 @@ include 'foot.php';
 if(isset($_SESSION['nick']) and isset($_SESSION['habil'])){
     $id_exp="";
     $fecha_ei="";
+     $entre="";
     $dni="";
     $apellido="";
     $nombre="";
@@ -36,6 +37,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
         $NuevaFicha=new Ficha($_GET['mdId']);  // instancio la clase identificacion pasandole el nro de identificacion, de esta forma lo busca
         $id_exp=$NuevaFicha->getid_exp();
         $fecha_ei=$NuevaFicha->getfecha_ei(); // setea los datos
+        $entre=$NuevaFicha->getentre();
         $dni=$NuevaFicha->getDni();
         $apellido=$NuevaFicha->getApellido();
         $nombre=$NuevaFicha->getNombre();
@@ -92,7 +94,11 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     </tr>
     <tr>
         <th></th>
-        <th style="text-align: :justify">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="date" name="fecha_ei" id="fecha_ei" value = "<?php print $fecha_ei ?>" oninput="dip()" onkeydown="return tab_btn(event,getElementById('fecha_ei'),getElementById('apellido'),getElementById('dni'))" class="fecha" tabindex="1" required disabled></th>
+        <th style="text-align: :justify">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha&nbsp;&nbsp; <input type="date" name="fecha_ei" id="fecha_ei" value = "<?php print $fecha_ei ?>" oninput="dip()" onkeydown="return tab_btn(event,getElementById('fecha_ei'),getElementById('apellido'),getElementById('dni'))" class="fecha" tabindex="1" required disabled></th>
+    </tr>
+     <tr>
+        <th></th>
+        <th style="text-align: :justify">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entrevista&nbsp;&nbsp; <input type="text" maxlength="1" name="entre" id="entre" class="oby" value = "<?php print $entre ?>" oninput="dipis()" onkeydown="return tab_btn(event,getElementById('entre'),getElementById('apellido'),getElementById('dni'))"   readonly ></th>
     </tr>
     <tr><th><p> </p></th></tr>
     <tr>
@@ -256,7 +262,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
         
         <td colspan="2" id="boton">
              <input type="button" onclick="redirect1()" style="width:13%;margin-left:0%;" value="Cancelar" <?php print $disas ?>>
-             <input type="submit" style="text-align:center;width:13% " name="submit" id="submitguardar" value ="<?php echo $value ?>" tabindex="23" readonly></td>
+             <input type="submit" style="text-align:center;width:13% " name="submit" id="submitguardar" value ="<?php echo $value ?>" tabindex="23" readonly disabled></td>
     </tr>
 
 </table>
@@ -444,6 +450,7 @@ if (isset($_POST['submit'])&&!is_numeric($_POST['id_exp'])) // si presiono el bo
     $NuevaFicha=new Ficha();
     $NuevaFicha->setid_exp($_POST['nro_exp']);
     $NuevaFicha->setfecha_ei($_POST['fecha_ei']); // setea los datos
+    $NuevaFicha->setentre($_POST['entre']);
     $NuevaFicha->setDni($_POST['dni']);
     $NuevaFicha->setApellido(strtoupper($_POST['apellido']));
     $NuevaFicha->setNombre(strtoupper($_POST['nombre']));
@@ -474,6 +481,7 @@ if (isset($_POST['submit'])&&is_numeric($_POST['id_exp'])) // si presiono el bot
     $NuevaFicha=new Ficha();
     $NuevaFicha->setid_exp($_POST['nro_exp']);
     $NuevaFicha->setfecha_ei($_POST['fecha_ei']); // setea los datos
+    $NuevaFicha->setentre($_POST['entre']);
     $NuevaFicha->setDni($_POST['dni']);
     $NuevaFicha->setApellido(strtoupper($_POST['apellido']));
     $NuevaFicha->setNombre(strtoupper($_POST['nombre']));

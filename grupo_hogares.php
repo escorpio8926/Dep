@@ -136,7 +136,7 @@ if (isset($_GET['mtri'])) // si la operacion es modificar, este valor viene sete
           <th colspan="20" style="text-align: left; text-indent: 40em; height: 30px;">CARACTERISTICAS DE LOS MIEMBROS DEL HOGAR <br></b></th>
           <tr>
             <th colspan="1" style="width: 2%"><b>N°</b></th>
-            <th colspan="1"><b>Nombre</b></th>
+            <th colspan="1"><b>Nombre y Apellido</b></th>
             <th colspan="1"><b>DNI</b></th>
             <th colspan="1"><b>RELACIÓN DE PARENTESCO</b></th>
             <th colspan="1"><b>SEXO</b></th>

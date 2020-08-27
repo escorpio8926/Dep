@@ -21,7 +21,7 @@ $pagina= $excel->getActiveSheet();
 
 $pagina->setTitle('Fichas');
 
-$pagina->mergeCells('A1:W1');
+$pagina->mergeCells('A1:X1');
 $pagina->setCellValue('A1','CARATULA');
    $style = array(
         'alignment' => array(
@@ -33,11 +33,11 @@ $pagina->getStyle("A1")->applyFromArray($style);
 $pagina->getStyle("A1")->getFont()->setBold(true);
 $pagina->getStyle("A1")->getFont()->setSize(12);
 
-$pagina->mergeCells('X1:AS1');
-$pagina->setCellValue('X1','CARACTERÍSTICAS DEL HOGAR Y LA VIVIENDA');
-$pagina->getStyle("X1")->applyFromArray($style);
-$pagina->getStyle("X1")->getFont()->setBold(true);
-$pagina->getStyle("X1")->getFont()->setSize(12);
+$pagina->mergeCells('Y1:AT1');
+$pagina->setCellValue('Y1','CARACTERÍSTICAS DEL HOGAR Y LA VIVIENDA');
+$pagina->getStyle("Y1")->applyFromArray($style);
+$pagina->getStyle("Y1")->getFont()->setBold(true);
+$pagina->getStyle("Y1")->getFont()->setSize(12);
 
 
 new Conect();
@@ -56,77 +56,79 @@ if($fields >= 1){
 
 	$pagina->setCellValue('A2','ID EXPEDIENTE');
 	$pagina->setCellValue('B2','FECHA DE ALTA');
-	$pagina->setCellValue('C2','DNI');
-	$pagina->setCellValue('D2','APELLIDO');
-	$pagina->setCellValue('E2','NOMBRE ');
-	$pagina->setCellValue('F2','CALLE');
-	$pagina->setCellValue('G2','NUMERO ');
-	$pagina->setCellValue('H2','PISO');
-	$pagina->setCellValue('I2','DEPARTAMENTO ');
-	$pagina->setCellValue('J2','BARRIO');
-	$pagina->setCellValue('K2','LOCALIDAD');
-	$pagina->setCellValue('L2','PROVINCIA');
-	$pagina->setCellValue('M2','N° PADRÓN CATASTRAL');
-	$pagina->setCellValue('N2','TELÉFONO DE CONTACTO');
-	$pagina->setCellValue('O2','TARJETA ALIMENTARIA');
-	$pagina->setCellValue('P2','PROGRAMA ALIMENTARIO');
-	$pagina->setCellValue('Q2','ASISTENCIA A COMEDOR O MERENDERO COMUNITARIO');
-	$pagina->setCellValue('R2','¿CUAL?');
-	$pagina->setCellValue('S2','PROGRAMA TAFICEÑITOS');
-	$pagina->setCellValue('T2','PROGRAMA VIVIR MEJOR');
-	$pagina->setCellValue('U2','PROGRAMA INCLUSIÓN SOCIAL CON INGRESOS');
-	$pagina->setCellValue('V2','PROGRAMA ACOMPAÑAMIENTO INTEGRAL AL ADULTO MAYOR');
-	$pagina->setCellValue('W2','RELEVADOR DE DATOS');
+	$pagina->setCellValue('C2','ENTREVISTA');
+	$pagina->setCellValue('D2','DNI');
+	$pagina->setCellValue('E2','APELLIDO');
+	$pagina->setCellValue('F2','NOMBRE ');
+	$pagina->setCellValue('G2','CALLE');
+	$pagina->setCellValue('H2','NUMERO ');
+	$pagina->setCellValue('I2','PISO');
+	$pagina->setCellValue('J2','DEPARTAMENTO ');
+	$pagina->setCellValue('K2','BARRIO');
+	$pagina->setCellValue('L2','LOCALIDAD');
+	$pagina->setCellValue('M2','PROVINCIA');
+	$pagina->setCellValue('N2','N° PADRÓN CATASTRAL');
+	$pagina->setCellValue('O2','TELÉFONO DE CONTACTO');
+	$pagina->setCellValue('P2','TARJETA ALIMENTARIA');
+	$pagina->setCellValue('Q2','PROGRAMA ALIMENTARIO');
+	$pagina->setCellValue('R2','ASISTENCIA A COMEDOR O MERENDERO COMUNITARIO');
+	$pagina->setCellValue('S2','¿CUAL?');
+	$pagina->setCellValue('T2','PROGRAMA TAFICEÑITOS');
+	$pagina->setCellValue('U2','PROGRAMA VIVIR MEJOR');
+	$pagina->setCellValue('V2','PROGRAMA INCLUSIÓN SOCIAL CON INGRESOS');
+	$pagina->setCellValue('W2','PROGRAMA ACOMPAÑAMIENTO INTEGRAL AL ADULTO MAYOR');
+	$pagina->setCellValue('X2','RELEVADOR DE DATOS');
 	
-	$pagina->setCellValue('X2','¿CUÁL ES EL MATERIAL PREDOMINANTE EN LOS PISOS?');
-	$pagina->setCellValue('Y2','CUÁL ES EL MATERIAL PREDOMINANTE DE LAS PAREDES EXTERIORES');
-	$pagina->setCellValue('Z2','LAS PAREDES EXTERIORES ¿TIENEN REVESTIMIENTO EXTERNO O REVOQUE?');
-	$pagina->setCellValue('AA2','¿CUÁL ES EL MATERIAL PREDOMINANTE DE LA CUBIERTA EXTERIOR DEL TECHO?');
-	$pagina->setCellValue('AB2','EL TECHO ¿TIENEN REVESTIMIENTO INTERIOR O CIELORRASO?');
-	$pagina->setCellValue('AC2','¿TIENE AGUA...');
-	$pagina->setCellValue('AD2','EL AGUA QUE USA ESTE HOGAR PARA BEBER Y COCINAR, ¿PROVIENE...');
-	$pagina->setCellValue('AE2','ESTE HOGAR ¿TIENE BAÑO O LETRINA..');
-	$pagina->setCellValue('AF2','EL BAÑO ¿TIENE...');
-	$pagina->setCellValue('AG2','EL DESAGUE DEL INODORO ¿ES...');
-	$pagina->setCellValue('AH2','EL BAÑO O LETRINA ¿ES...');
-	$pagina->setCellValue('AI2','ESTE HOGAR ¿TIENE UN LUGAR O CUARTO PARA COCINAR..');
-	$pagina->setCellValue('AJ2','PARA COCINAR, ¿UTILIZA PRINCIPALMENTE…');
-	$pagina->setCellValue('AK2','ESTE HOGAR ¿TIENE AGUA CALIENTE A TRAVÉS DE…');
-	$pagina->setCellValue('AL2','EN TOTAL, ¿CUÁNTOS AMBIENTES, HABITACIONES O PIEZAS TIENE ESTE HOGAR (SIN CONTAR BAÑOS NI COCINAS)?');
-	$pagina->setCellValue('AM2','DE ESOS, ¿CUÁNTOS USAN HABITUALMENTE PARA DORMIR?');
+	$pagina->setCellValue('Y2','¿CUÁL ES EL MATERIAL PREDOMINANTE EN LOS PISOS?');
+	$pagina->setCellValue('Z2','CUÁL ES EL MATERIAL PREDOMINANTE DE LAS PAREDES EXTERIORES');
+	$pagina->setCellValue('AA2','LAS PAREDES EXTERIORES ¿TIENEN REVESTIMIENTO EXTERNO O REVOQUE?');
+	$pagina->setCellValue('AB2','¿CUÁL ES EL MATERIAL PREDOMINANTE DE LA CUBIERTA EXTERIOR DEL TECHO?');
+	$pagina->setCellValue('AC2','EL TECHO ¿TIENEN REVESTIMIENTO INTERIOR O CIELORRASO?');
+	$pagina->setCellValue('AD2','¿TIENE AGUA...');
+	$pagina->setCellValue('AE2','EL AGUA QUE USA ESTE HOGAR PARA BEBER Y COCINAR, ¿PROVIENE...');
+	$pagina->setCellValue('AF2','ESTE HOGAR ¿TIENE BAÑO O LETRINA..');
+	$pagina->setCellValue('AG2','EL BAÑO ¿TIENE...');
+	$pagina->setCellValue('AH2','EL DESAGUE DEL INODORO ¿ES...');
+	$pagina->setCellValue('AI2','EL BAÑO O LETRINA ¿ES...');
+	$pagina->setCellValue('AJ2','ESTE HOGAR ¿TIENE UN LUGAR O CUARTO PARA COCINAR..');
+	$pagina->setCellValue('AK2','PARA COCINAR, ¿UTILIZA PRINCIPALMENTE…');
+	$pagina->setCellValue('AL2','ESTE HOGAR ¿TIENE AGUA CALIENTE A TRAVÉS DE…');
+	$pagina->setCellValue('AM2','EN TOTAL, ¿CUÁNTOS AMBIENTES, HABITACIONES O PIEZAS TIENE ESTE HOGAR (SIN CONTAR BAÑOS NI COCINAS)?');
 	$pagina->setCellValue('AN2','DE ESOS, ¿CUÁNTOS USAN HABITUALMENTE PARA DORMIR?');
-	$pagina->setCellValue('AO2','SITUACIÓN DOMINIAL DE LA VIVIENDA');
-	$pagina->setCellValue('AP2','EXPEDIENTE TRÁMITE DOMINIAL. NRO:');
-	$pagina->setCellValue('AQ2','OTRO (ESPECIFICAR)');
-	$pagina->setCellValue('AR2','EN SU VIVIENDA, ¿TIENE MEDIDOR DE ENERGÍA ELÉCTRICA?');
-	$pagina->setCellValue('AS2','A LOS RESIDUOS DEL HOGAR LOS…');
+	$pagina->setCellValue('AO2','DE ESOS, ¿CUÁNTOS USAN HABITUALMENTE PARA DORMIR?');
+	$pagina->setCellValue('AP2','SITUACIÓN DOMINIAL DE LA VIVIENDA');
+	$pagina->setCellValue('AQ2','EXPEDIENTE TRÁMITE DOMINIAL. NRO:');
+	$pagina->setCellValue('AR2','OTRO (ESPECIFICAR)');
+	$pagina->setCellValue('AS2','EN SU VIVIENDA, ¿TIENE MEDIDOR DE ENERGÍA ELÉCTRICA?');
+	$pagina->setCellValue('AT2','A LOS RESIDUOS DEL HOGAR LOS…');
 
 
 	for ($i=0; $i <count($fichas); $i++) {
 
 		$pagina->setCellValue('A'.($i+3),$fichas[$i]['id_exp']);
 		$pagina->setCellValue('B'.($i+3),$fichas[$i]['fecha_ei']);
-		$pagina->setCellValue('C'.($i+3),$fichas[$i]['dni']);
-		$pagina->setCellValue('D'.($i+3),$fichas[$i]['apellido']);
-		$pagina->setCellValue('E'.($i+3),$fichas[$i]['nombre']);
-		$pagina->setCellValue('F'.($i+3),$fichas[$i]['calle']);
-		$pagina->setCellValue('G'.($i+3),$fichas[$i]['nro']);
-		$pagina->setCellValue('H'.($i+3),$fichas[$i]['piso']);
-		$pagina->setCellValue('I'.($i+3),$fichas[$i]['dpto']);
-		$pagina->setCellValue('J'.($i+3),$fichas[$i]['barrio']);
-		$pagina->setCellValue('K'.($i+3),$fichas[$i]['localidad']);
-		$pagina->setCellValue('L'.($i+3),$fichas[$i]['provincia']);
-		$pagina->setCellValue('M'.($i+3),$fichas[$i]['padron']);
-		$pagina->setCellValue('N'.($i+3),$fichas[$i]['telcon']);
-		$pagina->setCellValue('O'.($i+3),$fichas[$i]['t_ali']);
-		$pagina->setCellValue('P'.($i+3),$fichas[$i]['p_ali']);
-		$pagina->setCellValue('Q'.($i+3),$fichas[$i]['meren']);
-		$pagina->setCellValue('R'.($i+3),$fichas[$i]['meren_co']);
-		$pagina->setCellValue('S'.($i+3),$fichas[$i]['muni']);
-		$pagina->setCellValue('T'.($i+3),$fichas[$i]['muni1']);
-		$pagina->setCellValue('U'.($i+3),$fichas[$i]['muni2']);
-		$pagina->setCellValue('V'.($i+3),$fichas[$i]['muni3']);
-		$pagina->setCellValue('W'.($i+3),$fichas[$i]['encuestador']);
+		$pagina->setCellValue('C'.($i+3),$fichas[$i]['entre']);
+		$pagina->setCellValue('D'.($i+3),$fichas[$i]['dni']);
+		$pagina->setCellValue('E'.($i+3),$fichas[$i]['apellido']);
+		$pagina->setCellValue('F'.($i+3),$fichas[$i]['nombre']);
+		$pagina->setCellValue('G'.($i+3),$fichas[$i]['calle']);
+		$pagina->setCellValue('H'.($i+3),$fichas[$i]['nro']);
+		$pagina->setCellValue('I'.($i+3),$fichas[$i]['piso']);
+		$pagina->setCellValue('J'.($i+3),$fichas[$i]['dpto']);
+		$pagina->setCellValue('K'.($i+3),$fichas[$i]['barrio']);
+		$pagina->setCellValue('L'.($i+3),$fichas[$i]['localidad']);
+		$pagina->setCellValue('M'.($i+3),$fichas[$i]['provincia']);
+		$pagina->setCellValue('N'.($i+3),$fichas[$i]['padron']);
+		$pagina->setCellValue('O'.($i+3),$fichas[$i]['telcon']);
+		$pagina->setCellValue('P'.($i+3),$fichas[$i]['t_ali']);
+		$pagina->setCellValue('Q'.($i+3),$fichas[$i]['p_ali']);
+		$pagina->setCellValue('R'.($i+3),$fichas[$i]['meren']);
+		$pagina->setCellValue('S'.($i+3),$fichas[$i]['meren_co']);
+		$pagina->setCellValue('T'.($i+3),$fichas[$i]['muni']);
+		$pagina->setCellValue('U'.($i+3),$fichas[$i]['muni1']);
+		$pagina->setCellValue('V'.($i+3),$fichas[$i]['muni2']);
+		$pagina->setCellValue('W'.($i+3),$fichas[$i]['muni3']);
+		$pagina->setCellValue('X'.($i+3),$fichas[$i]['encuestador']);
 
 		$control[$i]=$fichas[$i]['id_exp'];
 
@@ -149,28 +151,28 @@ for ($i=0; $i < $fields; $i++) {
 		$fico[] = $ros;
     	for ($z=0; $z <count($fico); $z++) {
     	
-		$pagina->setCellValue('X'.($i+3),$fico[$z]['p1']);
-		$pagina->setCellValue('Y'.($i+3),$fico[$z]['p2']);
-		$pagina->setCellValue('Z'.($i+3),$fico[$z]['p3']);
-		$pagina->setCellValue('AA'.($i+3),$fico[$z]['p4']);
-		$pagina->setCellValue('AB'.($i+3),$fico[$z]['p5']);
-		$pagina->setCellValue('AC'.($i+3),$fico[$z]['p6']);
-		$pagina->setCellValue('AD'.($i+3),$fico[$z]['p7']);
-		$pagina->setCellValue('AE'.($i+3),$fico[$z]['p8']);
-		$pagina->setCellValue('AF'.($i+3),$fico[$z]['p9']);
-		$pagina->setCellValue('AG'.($i+3),$fico[$z]['p10']);
-		$pagina->setCellValue('AH'.($i+3),$fico[$z]['p11']);
-		$pagina->setCellValue('AI'.($i+3),$fico[$z]['p12']);
-		$pagina->setCellValue('AJ'.($i+3),$fico[$z]['p13']);
-		$pagina->setCellValue('AK'.($i+3),$fico[$z]['p14']);
-		$pagina->setCellValue('AL'.($i+3),$fico[$z]['p15']);
-		$pagina->setCellValue('AM'.($i+3),$fico[$z]['p16']);
-		$pagina->setCellValue('AN'.($i+3),$fico[$z]['p17']);
-		$pagina->setCellValue('AO'.($i+3),$fico[$z]['p18']);
-		$pagina->setCellValue('AP'.($i+3),$fico[$z]['p18_1']);
-		$pagina->setCellValue('AQ'.($i+3),$fico[$z]['p18_2']);
-		$pagina->setCellValue('AR'.($i+3),$fico[$z]['p19']);
-		$pagina->setCellValue('AS'.($i+3),$fico[$z]['p20']);
+		$pagina->setCellValue('Y'.($i+3),$fico[$z]['p1']);
+		$pagina->setCellValue('Z'.($i+3),$fico[$z]['p2']);
+		$pagina->setCellValue('AA'.($i+3),$fico[$z]['p3']);
+		$pagina->setCellValue('AB'.($i+3),$fico[$z]['p4']);
+		$pagina->setCellValue('AC'.($i+3),$fico[$z]['p5']);
+		$pagina->setCellValue('AD'.($i+3),$fico[$z]['p6']);
+		$pagina->setCellValue('AE'.($i+3),$fico[$z]['p7']);
+		$pagina->setCellValue('AF'.($i+3),$fico[$z]['p8']);
+		$pagina->setCellValue('AG'.($i+3),$fico[$z]['p9']);
+		$pagina->setCellValue('AH'.($i+3),$fico[$z]['p10']);
+		$pagina->setCellValue('AI'.($i+3),$fico[$z]['p11']);
+		$pagina->setCellValue('AJ'.($i+3),$fico[$z]['p12']);
+		$pagina->setCellValue('AK'.($i+3),$fico[$z]['p13']);
+		$pagina->setCellValue('AL'.($i+3),$fico[$z]['p14']);
+		$pagina->setCellValue('AM'.($i+3),$fico[$z]['p15']);
+		$pagina->setCellValue('AN'.($i+3),$fico[$z]['p16']);
+		$pagina->setCellValue('AO'.($i+3),$fico[$z]['p17']);
+		$pagina->setCellValue('AP'.($i+3),$fico[$z]['p18']);
+		$pagina->setCellValue('AQ'.($i+3),$fico[$z]['p18_1']);
+		$pagina->setCellValue('AR'.($i+3),$fico[$z]['p18_2']);
+		$pagina->setCellValue('AS'.($i+3),$fico[$z]['p19']);
+		$pagina->setCellValue('AT'.($i+3),$fico[$z]['p20']);
 		
 
 }//fin del foreach caracteristicas hogar vivienda
@@ -202,53 +204,53 @@ $m=0; // hoja 1 columnas
 		$ficos[$k] = $rosa;
 		
 		
-    	$pagina->setCellValueByColumnAndRow(45+$m, $hogar,'COMPONENTE '.$ficos[$k]['id_numero']);
-    	$pagina->setCellValueByColumnAndRow(46+$m, $hogar,'DNI');
-		$pagina->setCellValueByColumnAndRow(47+$m, $hogar,'RELACIÓN DE PARENTESCO');
-		$pagina->setCellValueByColumnAndRow(48+$m, $hogar,'SEXO');
-		$pagina->setCellValueByColumnAndRow(49+$m, $hogar,'FECHA DE NACIMIENTO');
-		$pagina->setCellValueByColumnAndRow(50+$m, $hogar,'EDAD');
-		$pagina->setCellValueByColumnAndRow(51+$m, $hogar,'SITUACIÓN CONYUGAL');
-		$pagina->setCellValueByColumnAndRow(52+$m, $hogar,'COBERTURA_MEDICA');
-		$pagina->setCellValueByColumnAndRow(53+$m, $hogar,'ÚLTIMO CONTROL MEDICO');
-		$pagina->setCellValueByColumnAndRow(54+$m, $hogar,'LUGAR HABITUAL DE CONTROLES MÉDICOS');
-		$pagina->setCellValueByColumnAndRow(55+$m, $hogar,'DIFICULTAD O LIMITACION PARA SUBIR ESCALERAS');
-		$pagina->setCellValueByColumnAndRow(56+$m, $hogar,' DIFICULTAD O LIMITACION PARA ENTENDER, RECORDAR O CONCENTRARSE');
-		$pagina->setCellValueByColumnAndRow(57+$m, $hogar,'DIFICULTAD O LIMITACION PARA HABLAR O COMUNICARSE');
-		$pagina->setCellValueByColumnAndRow(58+$m, $hogar,'DIFICULTAD O LIMITACION PARA OÍR');
-		$pagina->setCellValueByColumnAndRow(59+$m, $hogar,'DIFICULTAD O LIMITACION PARA VER');
-		$pagina->setCellValueByColumnAndRow(60+$m, $hogar,'DIFICULTAD O LIMITACION PARA COMER, BAÑARSE O VESTIRSE SOLO/A');
-		$pagina->setCellValueByColumnAndRow(61+$m, $hogar,'Posee Certificado Único de Discapacidad');
-		$pagina->setCellValueByColumnAndRow(62+$m, $hogar,'Cobra Jubilación o Pensión');
-		$pagina->setCellValueByColumnAndRow(63+$m, $hogar,'COBRA');
-		$pagina->setCellValueByColumnAndRow(64+$m, $hogar,'ASISTE O ASISTIÓ A UN ESTABLECIMIENTO EDUCATIVO');
-		$pagina->setCellValueByColumnAndRow(65+$m, $hogar,'EL NIVEL MÁS ALTO QUE CURSA O CURSÓ');
-		$pagina->setCellValueByColumnAndRow(66+$m, $hogar,'¿FINALIZÓ ESE NIVEL?');
-		$pagina->setCellValueByColumnAndRow(67+$m, $hogar,'EL ÚLTIMO GRADO/AÑO QUE APROBÓ');
+    	$pagina->setCellValueByColumnAndRow(46+$m, $hogar,'COMPONENTE '.$ficos[$k]['id_numero']);
+    	$pagina->setCellValueByColumnAndRow(47+$m, $hogar,'DNI');
+		$pagina->setCellValueByColumnAndRow(48+$m, $hogar,'RELACIÓN DE PARENTESCO');
+		$pagina->setCellValueByColumnAndRow(49+$m, $hogar,'SEXO');
+		$pagina->setCellValueByColumnAndRow(50+$m, $hogar,'FECHA DE NACIMIENTO');
+		$pagina->setCellValueByColumnAndRow(51+$m, $hogar,'EDAD');
+		$pagina->setCellValueByColumnAndRow(52+$m, $hogar,'SITUACIÓN CONYUGAL');
+		$pagina->setCellValueByColumnAndRow(53+$m, $hogar,'COBERTURA_MEDICA');
+		$pagina->setCellValueByColumnAndRow(54+$m, $hogar,'ÚLTIMO CONTROL MEDICO');
+		$pagina->setCellValueByColumnAndRow(55+$m, $hogar,'LUGAR HABITUAL DE CONTROLES MÉDICOS');
+		$pagina->setCellValueByColumnAndRow(56+$m, $hogar,'DIFICULTAD O LIMITACION PARA SUBIR ESCALERAS');
+		$pagina->setCellValueByColumnAndRow(57+$m, $hogar,' DIFICULTAD O LIMITACION PARA ENTENDER, RECORDAR O CONCENTRARSE');
+		$pagina->setCellValueByColumnAndRow(58+$m, $hogar,'DIFICULTAD O LIMITACION PARA HABLAR O COMUNICARSE');
+		$pagina->setCellValueByColumnAndRow(59+$m, $hogar,'DIFICULTAD O LIMITACION PARA OÍR');
+		$pagina->setCellValueByColumnAndRow(60+$m, $hogar,'DIFICULTAD O LIMITACION PARA VER');
+		$pagina->setCellValueByColumnAndRow(61+$m, $hogar,'DIFICULTAD O LIMITACION PARA COMER, BAÑARSE O VESTIRSE SOLO/A');
+		$pagina->setCellValueByColumnAndRow(62+$m, $hogar,'Posee Certificado Único de Discapacidad');
+		$pagina->setCellValueByColumnAndRow(63+$m, $hogar,'Cobra Jubilación o Pensión');
+		$pagina->setCellValueByColumnAndRow(64+$m, $hogar,'COBRA');
+		$pagina->setCellValueByColumnAndRow(65+$m, $hogar,'ASISTE O ASISTIÓ A UN ESTABLECIMIENTO EDUCATIVO');
+		$pagina->setCellValueByColumnAndRow(66+$m, $hogar,'EL NIVEL MÁS ALTO QUE CURSA O CURSÓ');
+		$pagina->setCellValueByColumnAndRow(67+$m, $hogar,'¿FINALIZÓ ESE NIVEL?');
+		$pagina->setCellValueByColumnAndRow(68+$m, $hogar,'EL ÚLTIMO GRADO/AÑO QUE APROBÓ');
 	
-		$pagina->setCellValueByColumnAndRow(45+$m, $ñ+3,$ficos[$k]['nombre']);
-		$pagina->setCellValueByColumnAndRow(46+$m, $ñ+3,$ficos[$k]['dni']);
-		$pagina->setCellValueByColumnAndRow(47+$m, $ñ+3,$ficos[$k]['rel_parentesco']);
-		$pagina->setCellValueByColumnAndRow(48+$m, $ñ+3,$ficos[$k]['sexo']);
-		$pagina->setCellValueByColumnAndRow(49+$m, $ñ+3,$ficos[$k]['fecha_nac']);
-		$pagina->setCellValueByColumnAndRow(50+$m, $ñ+3,$ficos[$k]['anios']);
-		$pagina->setCellValueByColumnAndRow(51+$m, $ñ+3,$ficos[$k]['sit_conyu']);
-		$pagina->setCellValueByColumnAndRow(52+$m, $ñ+3,$ficos[$k]['cober_medic']);
-		$pagina->setCellValueByColumnAndRow(53+$m, $ñ+3,$ficos[$k]['salud_1']);
-		$pagina->setCellValueByColumnAndRow(54+$m, $ñ+3,$ficos[$k]['salud_2']);
-		$pagina->setCellValueByColumnAndRow(55+$m, $ñ+3,$ficos[$k]['disc_1']);
-		$pagina->setCellValueByColumnAndRow(56+$m, $ñ+3,$ficos[$k]['disc_10']);
-		$pagina->setCellValueByColumnAndRow(57+$m, $ñ+3,$ficos[$k]['disc_100']);
-		$pagina->setCellValueByColumnAndRow(58+$m, $ñ+3,$ficos[$k]['disc_1000']);
-		$pagina->setCellValueByColumnAndRow(59+$m, $ñ+3,$ficos[$k]['disc_10000']);
-		$pagina->setCellValueByColumnAndRow(60+$m, $ñ+3,$ficos[$k]['disc_100000']);
-		$pagina->setCellValueByColumnAndRow(61+$m, $ñ+3,$ficos[$k]['disc_2']);
-		$pagina->setCellValueByColumnAndRow(62+$m, $ñ+3,$ficos[$k]['jub_1']);
-		$pagina->setCellValueByColumnAndRow(63+$m, $ñ+3,$ficos[$k]['jub_2']);
-		$pagina->setCellValueByColumnAndRow(64+$m, $ñ+3,$ficos[$k]['edu_1']);
-		$pagina->setCellValueByColumnAndRow(65+$m, $ñ+3,$ficos[$k]['edu_2']);
-		$pagina->setCellValueByColumnAndRow(66+$m, $ñ+3,$ficos[$k]['edu_3']);
-		$pagina->setCellValueByColumnAndRow(67+$m, $ñ+3,$ficos[$k]['edu_4']);
+		$pagina->setCellValueByColumnAndRow(46+$m, $ñ+3,$ficos[$k]['nombre']);
+		$pagina->setCellValueByColumnAndRow(47+$m, $ñ+3,$ficos[$k]['dni']);
+		$pagina->setCellValueByColumnAndRow(48+$m, $ñ+3,$ficos[$k]['rel_parentesco']);
+		$pagina->setCellValueByColumnAndRow(49+$m, $ñ+3,$ficos[$k]['sexo']);
+		$pagina->setCellValueByColumnAndRow(50+$m, $ñ+3,$ficos[$k]['fecha_nac']);
+		$pagina->setCellValueByColumnAndRow(51+$m, $ñ+3,$ficos[$k]['anios']);
+		$pagina->setCellValueByColumnAndRow(52+$m, $ñ+3,$ficos[$k]['sit_conyu']);
+		$pagina->setCellValueByColumnAndRow(53+$m, $ñ+3,$ficos[$k]['cober_medic']);
+		$pagina->setCellValueByColumnAndRow(54+$m, $ñ+3,$ficos[$k]['salud_1']);
+		$pagina->setCellValueByColumnAndRow(55+$m, $ñ+3,$ficos[$k]['salud_2']);
+		$pagina->setCellValueByColumnAndRow(56+$m, $ñ+3,$ficos[$k]['disc_1']);
+		$pagina->setCellValueByColumnAndRow(57+$m, $ñ+3,$ficos[$k]['disc_10']);
+		$pagina->setCellValueByColumnAndRow(58+$m, $ñ+3,$ficos[$k]['disc_100']);
+		$pagina->setCellValueByColumnAndRow(59+$m, $ñ+3,$ficos[$k]['disc_1000']);
+		$pagina->setCellValueByColumnAndRow(60+$m, $ñ+3,$ficos[$k]['disc_10000']);
+		$pagina->setCellValueByColumnAndRow(61+$m, $ñ+3,$ficos[$k]['disc_100000']);
+		$pagina->setCellValueByColumnAndRow(62+$m, $ñ+3,$ficos[$k]['disc_2']);
+		$pagina->setCellValueByColumnAndRow(63+$m, $ñ+3,$ficos[$k]['jub_1']);
+		$pagina->setCellValueByColumnAndRow(64+$m, $ñ+3,$ficos[$k]['jub_2']);
+		$pagina->setCellValueByColumnAndRow(65+$m, $ñ+3,$ficos[$k]['edu_1']);
+		$pagina->setCellValueByColumnAndRow(66+$m, $ñ+3,$ficos[$k]['edu_2']);
+		$pagina->setCellValueByColumnAndRow(67+$m, $ñ+3,$ficos[$k]['edu_3']);
+		$pagina->setCellValueByColumnAndRow(68+$m, $ñ+3,$ficos[$k]['edu_4']);
 	
 //$k=$k+1; // titulo
 $m=$m+23;// se mueve horizontalmente
@@ -263,7 +265,7 @@ $ñ=$ñ+1;
 
 }// fin de form de control
 
-$centarhogar=$centar+39;
+$centarhogar=$centar+40;
 
 $filasa=0;
 for ($i=0; $i < $fields; $i++) { 
@@ -546,11 +548,11 @@ $final=$try+$lazo;
 
 //seguir
 
-$pagina->mergeCellsByColumnAndRow(45, 1, $centarhogar, 1);
-$pagina->setCellValueByColumnAndRow(45, 1,'GRUPO HOGAR');
-$pagina->getStyleByColumnAndRow(45,1)->applyFromArray($style);
-$pagina->getStyleByColumnAndRow(45,1)->getFont()->setBold(true);
-$pagina->getStyleByColumnAndRow(45,1)->getFont()->setSize(12);
+$pagina->mergeCellsByColumnAndRow(46, 1, $centarhogar, 1);
+$pagina->setCellValueByColumnAndRow(46, 1,'GRUPO HOGAR');
+$pagina->getStyleByColumnAndRow(46,1)->applyFromArray($style);
+$pagina->getStyleByColumnAndRow(46,1)->getFont()->setBold(true);
+$pagina->getStyleByColumnAndRow(46,1)->getFont()->setSize(12);
 
 
 $pagina->setCellValueByColumnAndRow($centarhogar, 2,'OBSERVACIÓN');
