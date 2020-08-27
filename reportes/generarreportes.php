@@ -1,8 +1,6 @@
 <?php
 header('Content-Type: application/vdn.ms-excel');
-header('Content-Disposition: attachment; filename=reporte.xlsx');
-header('Pragma: no-cache'); 
-header('Expires: 0'); 
+header('Content-Disposition: attachment; filename=reporte.xls');
 
 require('../librerias/ExcelLibrary/PHPExcel.php');
 require('../classconect.php');
@@ -601,13 +599,13 @@ for ($uo=3; $uo < $fields+3 ; $uo++) {  //estilos finales
 $excel->setActiveSheetIndex();
 
 
-	$objWriter= PHPExcel_IOFactory::createWriter($excel,'EXCEL2007');
+	$objWriter= PHPExcel_IOFactory::createWriter($excel,'Excel5');
 	$objWriter -> save('php://output');
 }
 else
 	{$w='No se Registran Datos En el rango Asignado';
 $pagina->setCellValue('A1',$w);
-$objWriter= PHPExcel_IOFactory::createWriter($excel,'EXCEL2007');
+$objWriter= PHPExcel_IOFactory::createWriter($excel,'Excel5');
 
 $objWriter -> save('php://output');
 
