@@ -404,7 +404,7 @@ $disa="";
               <tr><th colspan="3"><p></p></th>
 
                  <tr>
-                <th class="sino1" rowspan="1"><b>17 DE ESOS, ¿CUÁNTOS USAN HABITUALMENTE PARA DORMIR?</b>
+                <th class="sino1" rowspan="1"><b>17 ¿ESTE HOGAR ES…</b>
                 </th>
                 
                 <td style="width:5%;border-right: none" rowspan="1" style="background-color: #8acdf9;">

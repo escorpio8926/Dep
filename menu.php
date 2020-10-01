@@ -41,8 +41,12 @@ if (isset($_SESSION['habil']))
 
         $item1_1=new Items('Exportar Datos','./exportar.php');
         $opcion2->insertarItems($item1_1);
+ //--------------------------------------------------------------
+        $opcion3=new Opcion('Gestión de usuarios');
+        $menu1->insertarOpciones($opcion3);
 
-
+        $item1_1=new Items('Usuarios','./gestionusuario.php');
+        $opcion3->insertarItems($item1_1);
         
 //
 //                $item2_1=new Items('Informantes Sin Cargar','./RInformantesSinCargar.php');

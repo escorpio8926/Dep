@@ -14,6 +14,11 @@ include 'foot.php';
 
 <div id="metodo_busqueda" class="search_method"> <!-- comienzo del div de busqueda -->
     <?php  // metodo de busqueda
+    if (isset($_GET['brId'])&&is_numeric($_GET['brId'])) // si presiono el boton y es eliminar
+{
+    $NuevaFicha=new Ficha();
+    print  $NuevaFicha->deleteFicha($_GET['brId']); // elimina el identificacion y muestra el resultado
+}
     if(isset($_GET['busqueda'])){
     if ($_SESSION['habil']>1) {     // nivel de permiso 2 o mayor
     $busqueda =$_GET['busqueda'];    //paso el parametro busqueda
@@ -71,7 +76,7 @@ else if ( $color == 'FINALIZADO' )
         .'<td>'.$resultados['apellido'].', '.$resultados['nombre'].'</td>'
         .'<td>'.$resultados['dni'].'</td>'
         .'<td colspan="3"><a href="nueva_ficha.php?mdId='.$resultados['id_exp'].'">Modificar Caratula</a></td>'
-        .'<td colspan="4    "><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$resultados['id_exp'].'","'.$resultados['id_exp'].'");>Eliminar Ficha</a></td>'
+        .'<td colspan="4    "><a href="javascript:;" onclick= avisoi("Listado.php?brId='.$resultados['id_exp'].'","'.$resultados['id_exp'].'");>Eliminar Ficha</a></td>'
         .'<td colspan=2><b>'.'INACTIVO'.'</b></td>'
 
 //                  .'<td><a href="javascript:;" onclick= avisoj("Salida_Mes.php?crId='.$resultados['id_salida_mes'].'","'.$resultados['mes'].'");>Cerrar Salida</a></td>'
@@ -90,7 +95,7 @@ else if ( $color == 'FINALIZADO' )
         .'<td><a href="ingresos.php?Id='.$resultados['id_exp'].'">Ingresos del Hogar</a></td>'
         .'<td><a href="sit_mayor.php?Id='.$resultados['id_exp'].'">Situación Laboral mayores de 14 años</a></td>'
         .'<td><a href="evaluacion_trabajo.php?Id='.$resultados['id_exp'].'">Evaluación del Caso y Plan de Trabajo</a></td>'
-        .'<td><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$resultados['id_exp'].'","'.$resultados['id_exp'].'");>Eliminar Ficha</a></td>'
+        .'<td><a href="javascript:;" onclick= avisoi("Listado.php?brId='.$resultados['id_exp'].'","'.$resultados['id_exp'].'");>Eliminar Ficha</a></td>'
         .'<td>'.$fal.$color.$war.'</td>'
 //                  .'<td><a href="javascript:;" onclick= avisoj("Salida_Mes.php?crId='.$resultados['id_salida_mes'].'","'.$resultados['mes'].'");>Cerrar Salida</a></td>'
         .'</tr>';
@@ -167,7 +172,7 @@ else if ( $color == 'FINALIZADO' )
         .'<td>'.$resultados1['apellido'].', '.$resultados1['nombre'].'</td>'
         .'<td>'.$resultados1['dni'].'</td>'
         .'<td colspan="3"><a href="nueva_ficha.php?mdId='.$resultados1['id_exp'].'">Modificar Caratula</a></td>'
-        .'<td colspan="4    "><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$resultados1['id_exp'].'","'.$resultados1['id_exp'].'");>Eliminar Ficha</a></td>'
+        .'<td colspan="4    "><a href="javascript:;" onclick= avisoi("Listado.php?brId='.$resultados1['id_exp'].'","'.$resultados1['id_exp'].'");>Eliminar Ficha</a></td>'
         .'<td colspan=2><b>'.'INACTIVO'.'</b></td>'
 
 //                  .'<td><a href="javascript:;" onclick= avisoj("Salida_Mes.php?crId='.$resultados1['id_salida_mes'].'","'.$resultados1['mes'].'");>Cerrar Salida</a></td>'
@@ -186,7 +191,7 @@ else if ( $color == 'FINALIZADO' )
         .'<td><a href="ingresos.php?Id='.$resultados1['id_exp'].'">Ingresos del Hogar</a></td>'
         .'<td><a href="sit_mayor.php?Id='.$resultados1['id_exp'].'">Situación Laboral mayores de 14 años</a></td>'
         .'<td><a href="evaluacion_trabajo.php?Id='.$resultados1['id_exp'].'">Evaluación del Caso y Plan de Trabajo</a></td>'
-        .'<td><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$resultados1['id_exp'].'","'.$resultados1['id_exp'].'");>Eliminar Ficha</a></td>'
+        .'<td><a href="javascript:;" onclick= avisoi("Listado.php?brId='.$resultados1['id_exp'].'","'.$resultados1['id_exp'].'");>Eliminar Ficha</a></td>'
         .'<td>'.$fal.$color.$war.'</td>'
 //                  .'<td><a href="javascript:;" onclick= avisoj("Salida_Mes.php?crId='.$resultados1['id_salida_mes'].'","'.$resultados1['mes'].'");>Cerrar Salida</a></td>'
         .'</tr>';
@@ -255,7 +260,7 @@ while ($row=pg_fetch_array($NuevaFicha)) // recorre los identificaciones uno por
         .'<td>'.$row['apellido'].', '.$row['nombre'].'</td>'
         .'<td>'.$row['dni'].'</td>'
         .'<td colspan="3"><a href="nueva_ficha.php?mdId='.$row['id_exp'].'">Modificar Caratula</a></td>'
-        .'<td colspan="4    "><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
+        .'<td colspan="4    "><a href="javascript:;" onclick= avisoi("Listado.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
         .'<td colspan=2><b>'.'INACTIVO'.'</b></td>'
     
 
@@ -283,7 +288,7 @@ else if ( $color == 'FINALIZADO' )
         .'<td><a href="ingresos.php?Id='.$row['id_exp'].'">Ingresos del Hogar</a></td>'
         .'<td><a href="sit_mayor.php?Id='.$row['id_exp'].'">Situación Laboral mayores de 14 años</a></td>'
         .'<td><a href="evaluacion_trabajo.php?Id='.$row['id_exp'].'">Evaluación del Caso y Plan de Trabajo</a></td>'
-        .'<td><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
+        .'<td><a href="javascript:;" onclick= avisoi("Listado.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
         .'<td>'.$fal.$color.$war.'</td>'
         
        
@@ -337,7 +342,7 @@ while ($row=pg_fetch_array($NuevaFicha)) // recorre los identificaciones uno por
         .'<td>'.$row['apellido'].', '.$row['nombre'].'</td>'
         .'<td>'.$row['dni'].'</td>'
         .'<td colspan="3"><a href="nueva_ficha.php?mdId='.$row['id_exp'].'">Modificar Caratula</a></td>'
-        .'<td colspan="4    "><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
+        .'<td colspan="4    "><a href="javascript:;" onclick= avisoi("Listado.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
         .'<td colspan=2><b>'.'INACTIVO'.'</b></td>'
     
 
@@ -365,7 +370,7 @@ else if ( $color == 'FINALIZADO' )
         .'<td><a href="ingresos.php?Id='.$row['id_exp'].'">Ingresos del Hogar</a></td>'
         .'<td><a href="sit_mayor.php?Id='.$row['id_exp'].'">Situación Laboral mayores de 14 años</a></td>'
         .'<td><a href="evaluacion_trabajo.php?Id='.$row['id_exp'].'">Evaluación del Caso y Plan de Trabajo</a></td>'
-        .'<td><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
+        .'<td><a href="javascript:;" onclick= avisoi("Listado.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
         .'<td>'.$fal.$color.$war.'</td>'
         
        

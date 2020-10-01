@@ -380,7 +380,7 @@ $disa="";
                 </th>
   
                 <td style="width:4%;border-right: none" rowspan="1" style="background-color: #8acdf9;">
-                <input type="text" maxlength="2" name="p15" id="p15" required="" value="<?php print $p15 ?>" oninput="checkLength15()" onkeydown="return tab_btn(event,getElementById('p15'),getElementById('p16'))" style="width: 80%" <?php print $dis?>>
+                <input type="text" maxlength="2" class="entero" name="p15" id="p15" required="" value="<?php print $p15 ?>" oninput="checkLength15()" onkeydown="return tab_btn(event,getElementById('p15'),getElementById('p16'))" style="width: 80%" <?php print $dis?>>
                 </td>
                 <td style="width:40%;border-left:none"> 
               <textarea style="width:95%" name="dp15" id="dp15" cols="1" rows="3" disabled><?php print $dp15 ?></textarea>
@@ -404,7 +404,7 @@ $disa="";
               <tr><th colspan="3"><p></p></th>
 
                  <tr>
-                <th class="sino1" rowspan="1"><b>17 DE ESOS, ¿CUÁNTOS USAN HABITUALMENTE PARA DORMIR?</b>
+                <th class="sino1" rowspan="1"><b>17 ¿ESTE HOGAR ES…</b>
                 </th>
                 
                 <td style="width:4%;border-right: none" rowspan="1" style="background-color: #8acdf9;">
