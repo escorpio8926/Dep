@@ -133,7 +133,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
 
         <th colspan="1"  style="text-align: right;">
-            Calle:<input type="text" class="texto" style="width: 59%" name="calle" id="calle"  value = "<?php print $calle ?>" tabindex="6" oninput="checkLengthe()" onkeydown="return tab_btn1(event,getElementById('calle'),getElementById('nro'))" disabled >
+            Calle:<input type="text" class="texto" style="width: 59%" name="calle" id="calle"  value = "<?php print $calle ?>" tabindex="6" oninput="checkLengthe()" onkeydown="return tab_btn1901(event,getElementById('calle'),getElementById('nro'),getElementById('piso'),getElementById('dpto'),getElementById('barrio'))" disabled >
         </th>
         <th colspan="1"  style="text-align: justify;">
            &nbsp;&nbsp; Nro:&nbsp; <input type="text" class="entero" style="width: 50%"  maxlength="10" name="nro" id="nro"  value = "<?php print $nro ?>" tabindex="7"  onkeydown="return tab_btn2(event,getElementById('nro'),getElementById('barrio'),getElementById('piso'))" disabled>
@@ -1364,6 +1364,39 @@ var str2 = "nueva_ficha.php?Id=";
 window.location = str2.concat(product);
 
 }
+
+ function tab_btn1901(event,q1,q2,q3,q4,q5)
+{
+  var x1=q1;
+  var x2=q2;
+  var x3=q3;
+  var x4=q4;
+  var x5=q5;
+
+  var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+  if (t == 9 && x1.value.length >= 1 ) 
+  { 
+  x2.disabled=false;
+  x2.focus();
+  aux=x2.value;
+  x2.value="";
+  x2.value=aux;
+  return false;
+  }
+  else
+  {
+    x5.focus();
+      aux=x5.value;
+  x5.value="";
+  x5.value=aux;
+    x2.disabled=false;
+    x3.disabled=false;
+    x4.disabled=false;
+    return false;
+  }
+return true;
+
+  }
 //-->
 </script>
 
