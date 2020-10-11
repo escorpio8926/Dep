@@ -158,7 +158,7 @@ if (isset($_GET['mtri'])) // si la operacion es modificar, este valor viene sete
           <tr>
             <td colspan="1"><br><input type="text" name="id_numero" id="id_numero" value="<?php print $id_numero?>" readonly="" style="width: 80%;"></td>
             
-            <td colspan="1" ><br><input type="text" style="width: 80%;" name="nombre" id="nombre" value="<?php print $nombre ?>" <?php print $leer ?> required class="texto"  oninput="tre()" onkeydown="return tab_btnf(event,getElementById('nombre'),getElementById('dni'))"> </td>
+            <td colspan="1" ><br><input type="text" style="width: 80%;" name="nombre" id="nombre" value="<?php print $nombre ?>" <?php print $leer ?> required class="texto" oninput="tre()" onkeydown="return tab_btnf(event,getElementById('nombre'),getElementById('dni'))"> </td>
             
             <td colspan="1"><br><input type="number" style="width: 80%;" min="500000" max="99999999" name="dni" id="dni" value="<?php print $dni ?>" <?php print $leer ?> required onkeypress="return check(event,value)" oninput="checkLength2()" onkeydown="return tab_btn(event,getElementById('dni'),getElementById('rel_parentesco'))"  <?php print $cv2 ?> ></td>
             <td colspan="1">
@@ -1276,7 +1276,7 @@ document.getElementById("sexo").focus();
   sexo.value=aux;
 }
 var id_numero = document.getElementById('id_numero').value;
-if(id_numero==1){ponleFocus1();}else{ponleFocus();}
+if(id_numero==1 ||  id_numero==""){ponleFocus1();}else{ponleFocus();}
 
 
 function tab_btn(event,p1,p2)
