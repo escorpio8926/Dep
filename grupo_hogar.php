@@ -1262,10 +1262,15 @@ else
 {}
 
 }
-
+function ponleorden(){
+var x = document.getElementById("nombre");
+    aux=x.value;
+  x.value="";
+  x.value=aux;
+x.focus();}
 function ponleFocus(){
 document.getElementById("nombre").focus();
-aux=nombre.value;
+  aux=nombre.value;
   nombre.value="";
   nombre.value=aux;
 }
@@ -1276,7 +1281,14 @@ document.getElementById("sexo").focus();
   sexo.value=aux;
 }
 var id_numero = document.getElementById('id_numero').value;
-if(id_numero==1 ||  id_numero==""){ponleFocus1();}else{ponleFocus();}
+var nombre = document.getElementById('nombre').value;
+if(nombre==""){ponleFocus();}
+if(id_numero==1 ||  id_numero==""){ponleFocus1();}
+//if(id_numero > 1){ponleFocus();}
+var nombre1 = document.getElementById('nombre').value.length;
+if(id_numero >= 2 ){ponleorden();}
+
+
 
 
 function tab_btn(event,p1,p2)
