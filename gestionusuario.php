@@ -10,19 +10,22 @@ if(isset($_SESSION['nick']) and isset($_SESSION['habil'])){
     $rol="";
     $nombre="";
     $apellido="";
-    $id_user=$_SESSION['id_user'];
     $id_usuario="";
+    $id_user=$_SESSION['id_user'];
 
 if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene seteado y ejecuta el siguiente codigo
 {
 
         $NuevoUsuario=new usuarios($_GET['mdId']);  // instancio la clase identificacion pasandole el nro de identificacion, de esta forma lo busca
+        
         $usuario=$NuevoUsuario->getusuario();
         $password=$NuevoUsuario->getpassword(); // setea los datos
         $rol=$NuevoUsuario->getrol();
-        $id_usuario=$NuevoUsuario->getid_user();
         $nombre=$NuevoUsuario->getnombre();
         $apellido=$NuevoUsuario->getapellido();
+        $id_usuario=$NuevoUsuario->getid_usuario();
+        $id_user=$NuevoUsuario->getid_user();
+        
   
     }
     ?>
@@ -46,7 +49,7 @@ $a="";
 ?>
 <form method="POST" action="gestionusuario.php" autocomplete="off">
 
-
+     <input type="hidden" name="id_user" value="<?php print $id_user?>">
     <input type="hidden" name="id_usuario" value="<?php print $id_usuario?>">
     <br></br>
     <table style="width: 30%" >
@@ -105,6 +108,7 @@ if (isset($_POST['submit']) && !is_numeric($_POST['id_usuario'])) // si presiono
     $NuevoUsuario->setrol($_POST['rol']);
     $NuevoUsuario->setnombre($_POST['nombre']);
     $NuevoUsuario->setapellido($_POST['apellido']);
+    $NuevoUsuario->setid_user($_POST['id_user']);
    
 
     print $NuevoUsuario->insertusuarios(); // inserta y muestra el resultado
@@ -117,7 +121,8 @@ if (isset($_POST['submit']) && is_numeric($_POST['id_usuario'])) // si presiono 
     $NuevoUsuario->setpassword($_POST['password']); // setea los datos
     $NuevoUsuario->setnombre($_POST['nombre']);
     $NuevoUsuario->setapellido($_POST['apellido']);
-    $NuevoUsuario->setid_user($_POST['id_usuario']);
+    $NuevoUsuario->setid_user($_POST['id_user']);
+    $NuevoUsuario->setid_usuario($_POST['id_usuario']);
 
     print  $NuevoUsuario->updateusuarios(); // inserta y muestra el resultado
 }
@@ -150,11 +155,16 @@ if (isset($_GET['crId'])&&is_numeric($_GET['crId'])) // si presiono el boton y e
 $NuevoUsuario=new usuarios();
 $NuevoUsuario= $NuevoUsuario->getusuarios($_SESSION['id_user'],$_SESSION['habil']); // obtiene todos las salidas para despues mostrarlas
 
-    print '<div  id="grilla"> <br/><br/><table style="display:<?php print $van ?>; width:60%"  border=1 ">'
+    print '<div  id="grilla"> <br/><br/><table style="display:<?php print $van ?>; width:70%"  border=1 ">'
     .'<th style="width:50%">Apellido y Nombre</th>
-    <th height="30">Id Usuario</th>
+    <th style="width:15%">Usuario</th>
+
+
     
-    <th>Rol</th>
+      <th>Cargado por</th>
+        <th height="30">Id Usuario</th>
+  
+<th>Rol</th>
     <th  colspan=2></th>';
 
 while ($row=pg_fetch_array($NuevoUsuario)) // recorre los identificaciones uno por uno hasta el fin de la tabla
@@ -164,9 +174,11 @@ include './ifusuario.php';
     
         print '<tr>'
         .'<td  height="40">'.$row['apellido'].', '.$row['nombre'].'</td>'
+          .'<td>'.$row['username'].'</td>'
        
-   
+        .'<td>'.$row['id_user'].'</td>'
         .'<td>'.$row['id_usuario'].'</td>'
+       
         .'<td>'.$wik.'</td>'
         .'<td colspan="1"><a href="gestionusuario.php?mdId='.$row['id_usuario'].'">Modificar Usuario</a></td>'
         .'<td colspan="1"><a href="javascript:;" onclick= avisoifract("gestionusuario.php?brId='.$row['id_usuario'].'","'.$row['id_usuario'].'");>Eliminar Usuario</a></td>'
@@ -198,7 +210,23 @@ else
 }
 ?>
 
+<script>
 
+ function ponleFocus1(){
+
+ document.getElementById("nombre");
+
+
+  nombre.focus();
+  aux=nombre.value;
+  nombre.value="";
+  nombre.value=aux;
+}
+
+
+ponleFocus1();
+
+</script>
 </body>
 
 </html>

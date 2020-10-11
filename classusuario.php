@@ -6,9 +6,10 @@
    var $usuario;
    var $password;
    var $rol;
-   var $id_user;
    var $nombre;
    var $apellido;
+   var $id_user;
+   var $id_usuario;
  
 
 	function usuarios($val1='') // declara el constructor, si trae el id de usuarios la busca , si no, trae todas las usuarioss
@@ -21,9 +22,10 @@
       $this->usuario=$row['username'];   
       $this->password=$row['password'];
       $this->rol=$row['permiso'];
-      $this->id_user=$row['id_usuario'];
       $this->nombre=$row['nombre'];
       $this->apellido=$row['apellido'];
+      $this->id_user=$row['id_user'];
+      $this->id_usuario=$row['id_usuario'];
    
     }
   }
@@ -50,14 +52,14 @@
                         { return $this->password;}
                         function getrol()
                         { return $this->rol;}     
-                        function getid_user()
-                        { return $this->id_user;}
                         function getnombre()
                         { return $this->nombre;}
                         function getapellido()
                         { return $this->apellido;}                        
-                     
-                       
+                         function getid_user()
+                        { return $this->id_user;}                    
+                        function getid_usuario()
+                        { return $this->id_usuario;}                     
 
 
 	// metodos que setean los valores
@@ -71,76 +73,52 @@
                          function setrol($val)
                         {  $this->rol=$val;} 
 
-                        function setid_user($val)
-                        {  $this->id_user=$val;}  
-
-
                         function setnombre($val)
                         {  $this->nombre=$val;}  
 
                         function setapellido($val)
                         {  $this->apellido=$val;}       
 
+
+                        function setid_user($val)
+                        {  $this->id_user=$val;}  
+
+
+                        function setid_usuario($val)
+                        {  $this->id_usuario=$val;}  
+
+
 	function updateusuarios()	// actualiza la identificacion cargada en los atributos
 	{
+
    $obj_usuarios=new Conexion();
-   $qverifica="select * from usuarios where id_usuario='$this->id_user'";                    
+
+
+    $qverifica="select * from usuarios where id_usuario='$this->id_usuario'";                    
    $obj_usuarios->consulta($qverifica);
    if($obj_usuarios->num_rows()<>0){       
 
      $query="update usuarios set password='$this->password', "
      . "apellido='$this->apellido', "
      . "nombre='$this->nombre'"
-     . "where id_usuario='$this->id_user'";  
+     
+     . "where id_usuario='$this->id_usuario'";  
                  
-			$obj_usuarios->consulta($query); // ejecuta la consulta para traer la identificacion 
-			return '<div id="mensaje"><p/><h4>El usuario número:  '.$this->id_user.'  fue modificado con exito</h4></div>'; // retorna todos los registros afectados
-    }
-    else{
-      return '<div id="mensaje"><p/><h4>ERROR: YA FUE CARGADO El usuario NUMERO '.$this->usuario.', COMPRUEBE QUE LOS DATOS SEAN CORRECTOS </h4></div>'; 
-    }
-  }
-        function updateEstadoSalidaMes($val)	// actualiza el estado de la salida
-        {
-         $obj_usuarios=new Conexion();                       
-         $qverifica="select * from salidas_mes where id_salida_mes='$val'";                      
-         $obj_usuarios->consulta($qverifica);
-         if($obj_usuarios->num_rows()<>0){                          
-           $query="update salidas_mes set estado='FINALIZADA' where id_salida_mes = '$val'";                      
-			$obj_usuarios->consulta($query); // ejecuta la consulta para actualizar estado 
-      $query1="update precios set consistir=0 where id_salida_mes = '$val'";                    
-                        $obj_usuarios->consulta($query1);// ejecuta la consulta para desconsistir
-                        date_default_timezone_set('America/Argentina/Tucuman');
-                        $fecha = date('Y-m-d');
-                        $hora=  date("H:i:s");  
-                        $query2="insert into reapertura( fecha, hora, id_salida_mes, id_usuario) values ('$fecha', '$hora', '$val', '$this->id_user')";
-                        $obj_usuarios->consulta($query2);
-                        $resultado="select salidas_mes.estado, salidas_mes.id_salida_mes, salidas_mes.anio, salidas_mes.mes, salidas_mes.id_salida, salidas.panel, salidas.tarea, informantes.cod_informante, informantes.empresa 
-                        from informantes, salidas, salidas_mes
-                        where salidas_mes.id_salida = salidas.id_salida 
-                        AND salidas.id_informante=informantes.cod_informante
-                        AND salidas_mes.id_salida_mes='$val'                                               
-                        order by anio , mes , panel, tarea, cod_informante ASC";                        
-                        $result=$obj_usuarios->consulta($resultado);
-			return $result; // retorna todos los registros afectados
-    }
-    else{
-     return '<div id="mensaje"><p/><h4>ERROR: YA ESTA DADO DE ALTA EL FORMULARIO, COMPRUEBE QUE LOS DATOS SEAN CORRECTOS </h4></div>'; 
-   }
- }
-        function BuscarSalidaMes()	// inserta la identificacion cargada en los atributos
-        {
-         $obj_usuarios=new Conexion();                    
-         $qverifica="select * from salidas_mes "
-         ."where anio='$this->año' and mes='$this->mes' and id_salida='$this->id_salida'";                        
-         $result=$obj_usuarios->consulta($qverifica);                       
-         if($obj_usuarios->num_rows()<>0){                      
-			return $result;// retorna todos los registros afectados
-    }
-    else{
-     return '<div id="mensaje"><p/><h4>ERROR: AUN NO FUE CARGADA LA SALIDA, COMPRUEBE QUE LOS DATOS SEAN CORRECTOS</h4></div>'; 
-   }
- }	
+      $obj_usuarios->consulta($query); // ejecuta la consulta para traer la identificacion 
+      return '<div id="mensaje"><p/><h4>El usuario número:  '.$this->id_user.'  fue modificado con exito</h4></div>'; // retorna todos los registros afectados
+                                    }
+      else{
+        return '<div id="mensaje"><p/><h4>ERROR: YA FUE CARGADO El usuario NUMERO '.$this->usuario.', COMPRUEBE QUE LOS DATOS SEAN CORRECTOS </h4></div>'; 
+            }
+
+ }    
+
+
+  
+   
+  
+        
+  	
 	function insertusuarios()	// inserta la identificacion cargada en los atributos
 	{
         $obj_usuarios=new Conexion();
@@ -152,7 +130,7 @@
   if($obj_usuarios->num_rows()==0){                
                       
                         
-     $query="insert into usuarios (username, password, permiso, nombre, apellido) values ('$this->usuario','$this->password','$this->rol', '$this->nombre', '$this->apellido')";			                       
+     $query="insert into usuarios (username, password, permiso, nombre, apellido, id_user) values ('$this->usuario','$this->password','$this->rol', '$this->nombre', '$this->apellido', '$this->id_user')";			                       
                         $obj_usuarios->consulta($query); // ejecuta la consulta para traer la identificacion
 			return '<div id="mensaje"><p/><h4>El usuario:  '.$this->usuario.'  se guardo con exito</h4></div>'; // retorna todos los registros afectados
     
@@ -160,9 +138,10 @@
   }  
    else
    {
-      return '<div id="mensaje"><p/><h4>ERROR: YA FUE CARGADA El usuario '.$this->usuario.', COMPRUEBE QUE LOS DATOS SEAN CORRECTOS </h4></div>'; 
+      return '<div id="mensaje"><p/><h4>ERROR: YA FUE CARGADO El usuario '.$this->usuario.', COMPRUEBE QUE LOS DATOS SEAN CORRECTOS </h4></div>'; 
    }
- }	
+ }
+
 	function deleteusuarios($val)	// elimina la identificacion
 	{
 
