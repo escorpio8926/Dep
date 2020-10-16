@@ -5,9 +5,9 @@ include 'foot.php';
 $login = new Login();
 if (isset($_POST['Login']) and $_POST['Login']=='si')
 {
-        $login->setUsuario($_POST['nom']); 
+    $login->setUsuario($_POST['nom']); 
 	$login->setContraseña($_POST['pass']);	
-        $login->nueva_sesion();
+    $login->nueva_sesion();
 }else{
 
 }

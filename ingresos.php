@@ -580,7 +580,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
   var x7=p7;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value > 0) 
+  if ((t == 9 || t== 13) && x1.value > 0) 
   { 
   x5.style.display="block";
   x5.style.width="100%";
@@ -593,7 +593,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
   x3.disabled=false;
   return false;
   }
-  if (t == 9 && x1.value == '0') 
+  if ((t == 9 || t== 13) && x1.value == '0') 
   { 
   x4.style.display="block";
   x4.style.width="100%";
@@ -626,7 +626,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
   
 
-  if (t == 9 && x1.value == '2') 
+  if ((t == 9 || t== 13) && x1.value == '2') 
   {
   p6.style.display="block";
   p6.style.width="100%"; 
@@ -640,7 +640,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
   return false;
 
   }
-  if (t == 9 && x1.value=='99') 
+  if ((t == 9 || t== 13) && x1.value=='99') 
   { 
   x4.style.display="block";
   x4.style.width="100%";
@@ -653,7 +653,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
   return false;
   }
 
-  if (t == 9 && x1.value=="") 
+  if ((t == 9 || t== 13) && x1.value=="") 
   { 
  x1.focus();
  alert("Valor Nulo");
@@ -674,7 +674,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
   
 
 
- if (t == 9 &&  x1.value=='' ) 
+ if ((t == 9 || t== 13) &&  x1.value=='' ) 
   {
      alert("Valor Incorrecto o Nulo");
  x1.focus();
@@ -682,7 +682,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
 
   }
 
-  if (t == 9 && ( x1.value=='1' || x1.value=='2'|| x1.value=='3' || x1.value=='4'|| x1.value=='5'|| x1.value=='6' || x1.value=='7' || x1.value=='8' || x1.value=='9' || x1.value=='10' || x1.value=='11'|| x1.value=='12' || x1.value=='13' || x1.value=='14' || x1.value=='15' || x1.value=='16' || x1.value=='17'|| x1.value=='99')) 
+  if ((t == 9 || t== 13) && ( x1.value=='1' || x1.value=='2'|| x1.value=='3' || x1.value=='4'|| x1.value=='5'|| x1.value=='6' || x1.value=='7' || x1.value=='8' || x1.value=='9' || x1.value=='10' || x1.value=='11'|| x1.value=='12' || x1.value=='13' || x1.value=='14' || x1.value=='15' || x1.value=='16' || x1.value=='17'|| x1.value=='99')) 
   {
   x3.style.display="block";
   x3.style.width="100%"; 
@@ -709,7 +709,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
   
 
-  if (t == 9 && x1.value > 0) 
+  if ((t == 9 || t== 13) && x1.value > 0) 
   {
 
   x2.disabled=false;
@@ -731,7 +731,7 @@ function tab_btn(event,p1,p2,p3,p4,p5,p6,p7)
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
   
 
-  if (t == 9 && x1.value > 0) 
+  if ((t == 9 || t== 13) && x1.value > 0) 
   {
 
   x2.disabled=false;

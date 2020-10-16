@@ -1317,7 +1317,7 @@ function tab_btn(event,p1,p2)
   var x1=p1;
   var x2=p2;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value > 0) 
+  if ((t == 9 || t== 13) && x1.value > 0) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1335,7 +1335,7 @@ function tab_btn(event,p1,p2)
   var x2=p3;
   var x3=p4;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value == 1 || x1.value == 2)) 
+  if ((t == 9 || t== 13) && (x1.value == 1 || x1.value == 2)) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1345,7 +1345,7 @@ function tab_btn(event,p1,p2)
   return false;
   }  
 
-  if (t == 9 && (x1.value >=3)) 
+  if ((t == 9 || t== 13) && (x1.value >=3)) 
   {
 
   x3.disabled=false;
@@ -1369,7 +1369,7 @@ function tab_btn(event,p1,p2)
   var x4=p10;
   var x5=p11;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value == 1 || x1.value == 2)) 
+  if ((t == 9 || t== 13) && (x1.value == 1 || x1.value == 2)) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1379,7 +1379,7 @@ function tab_btn(event,p1,p2)
   return false;
   }  
 
-  if (t == 9 && (x1.value ==3)) 
+  if ((t == 9 || t== 13) && (x1.value ==3)) 
   {
 
  
@@ -1405,7 +1405,7 @@ function tab_btn(event,p1,p2)
   var x3=document.getElementById('18_1');
   var x4=document.getElementById('18_2');
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value == 1 || x1.value == 2 || x1.value == 3 || x1.value == 4)) 
+  if ((t == 9 || t== 13) && (x1.value == 1 || x1.value == 2 || x1.value == 3 || x1.value == 4)) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1415,7 +1415,7 @@ function tab_btn(event,p1,p2)
   return false;
   }  
 
-   if (t == 9 && x1.value == 6 ) 
+   if ((t == 9 || t== 13) && x1.value == 6 ) 
   { 
   x2.disabled=false;
   x3.focus();
@@ -1426,7 +1426,7 @@ function tab_btn(event,p1,p2)
   return false;
   }  
 
-if (t == 9 && x1.value == 5 ) 
+if ((t == 9 || t== 13) && x1.value == 5 ) 
   { 
   x2.disabled=false;
   x4.focus();
@@ -1445,7 +1445,7 @@ function tab_btn4(event,p1,p2)
   var x1=p1;
   var x2=p2;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 ) 
+  if ((t == 9 || t== 13) ) 
   { 
   x2.disabled=false;
   x2.focus();

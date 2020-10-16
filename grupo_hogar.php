@@ -121,7 +121,6 @@ if (isset($_GET['mtri'])) // si la operacion es modificar, este valor viene sete
   { 
         $fugi=1;
   }
-
   ?>
 
   <div id="cuerpo">
@@ -171,7 +170,7 @@ if (isset($_GET['mtri'])) // si la operacion es modificar, este valor viene sete
             
             <td colspan="1"><br><input type="date" style="width: 80%;" name="fecha_nac" id="fecha_nac" value="<?php print $fecha_nac ?>"required <?php print $cv2 ?> <?php print $cv1 ?> oninput="dip()" onkeydown="return tab_btn1(event,getElementById('fecha_nac'),getElementById('anios'))"></td>
 
-            <td colspan="1"> <br> <input type="number" style="width: 80%;" name="anios" id="anios" min="0" max="120"  value="<?php print $anios ?>" required onkeypress="return check(event,value)" oninput="checkLength3()" onkeydown="return tab_btn(event,getElementById('anios'),getElementById('sit_conyu'))"  <?php print $cv2 ?> <?php print $cv1 ?>></td>
+            <td colspan="1" > <br> <input type="number" style="width: 80%;" name="anios" id="anios" min="0" max="120"  value="<?php print $anios ?>" required onkeypress="return check(event,value)" oninput="checkLength3()" onkeydown="return tab_btn(event,getElementById('anios'),getElementById('sit_conyu'))"  <?php print $cv2 ?> <?php print $cv1 ?>></td>
             <td colspan="1">
               <br><input type="number" style="width: 80%;" id="sit_conyu" name="sit_conyu" value="<?php print $sit_conyu ?>" required onkeypress="return check(event,value)" min="1" max="5"  oninput="checkLength4()" onkeydown="return tab_btn(event,getElementById('sit_conyu'),getElementById('cober_medic'))" class="sinocin" <?php print $cv2 ?> <?php print $cv1 ?>>
             </td>
@@ -1296,7 +1295,7 @@ function tab_btn(event,p1,p2)
   var x1=p1;
   var x2=p2;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value > 0) 
+  if ((t == 9 || t== 13) && x1.value > 0) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1309,6 +1308,7 @@ function tab_btn(event,p1,p2)
 
   }
 
+
   function tab_btn1(event,p1,p2)
 {
   var x1=p1 // fecha_nac
@@ -1316,7 +1316,7 @@ function tab_btn(event,p1,p2)
   //var x3=new date("2000","03","01");
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value > "0000-00-00" ) 
+  if ((t == 9 || t== 13) && x1.value > "0000-00-00" ) 
   {
   x2.disabled=false;
   x2.focus();
@@ -1334,7 +1334,7 @@ function tab_btn(event,p1,p2)
   var x1=p1;
   var x2=p2;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value.length > 0) 
+  if ((t == 9 || t== 13) && x1.value.length > 0) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1353,7 +1353,7 @@ function tab_btn(event,p1,p2)
   var x2=p2;
   var x3=p3;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value == 2) 
+  if ((t == 9 || t== 13) && x1.value == 2) 
   { 
  x2.style.display="block"; 
   x2.disabled=false;
@@ -1364,7 +1364,7 @@ function tab_btn(event,p1,p2)
   return false;
   }
 
-  if (t == 9 && x1.value == 1) 
+  if ((t == 9 || t== 13) && x1.value == 1) 
   {
     x2.disabled=false;
   x2.style.display="none"; 
@@ -1385,7 +1385,7 @@ function tab_btn(event,p1,p2)
   var x4=p4;
   var x5=p5;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value == 1 ||  x1.value == 2)) 
+  if ((t == 9 || t== 13) && (x1.value == 1 ||  x1.value == 2)) 
   { 
 
   x2.disabled=false;
@@ -1396,7 +1396,7 @@ function tab_btn(event,p1,p2)
   return false;
   }
 
-  if (t == 9 && x1.value == 3) 
+  if ((t == 9 || t== 13) && x1.value == 3) 
   {
   x2.disabled=false;
   x2.style.display="none";
@@ -1419,7 +1419,7 @@ function tab_btn(event,p1,p2)
   var x2=p2;
   var x3=p3;
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value == 1 )) 
+  if ((t == 9 || t== 13) && (x1.value == 1 )) 
   { 
 
   x2.disabled=false;
@@ -1430,7 +1430,7 @@ function tab_btn(event,p1,p2)
   return false;
   }
 
-  if (t == 9 && x1.value == 2) 
+  if ((t == 9 || t== 13) && x1.value == 2) 
   {
 
   x3.disabled=false;

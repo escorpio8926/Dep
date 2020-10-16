@@ -120,7 +120,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     </tr>
     <tr>
         <th colspan="2"  style="text-align: center;text-indent: 3.1%">
-           Nombre: <input type="text" class="texto" style="width: 70.5%" maxlength="40" name="nombre" id="nombre"  value = "<?php print $nombre ?>"  oninput="checkLengthw()" onkeydown="return tab_btn1barrio(event,getElementById('nombre'),getElementById('calle'),getElementById('barrio'))" tabindex="5" disabled required>
+           Nombre: <input type="text" class="texto" style="width: 70.5%" maxlength="40" name="nombre" id="nombre"  value = "<?php print $nombre ?>"  oninput="checkLengthw()" onkeydown="return tab_btn1barrio(event,getElementById('nombre'),getElementById('calle'),getElementById('barrio'),getElementById('nro'))" tabindex="5" disabled required>
         </th>
 
     </tr>
@@ -133,7 +133,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
 
         <th colspan="1"  style="text-align: right;">
-            Calle:<input type="text" class="texto" style="width: 59%" name="calle" id="calle"  value = "<?php print $calle ?>" tabindex="6" oninput="checkLengthe()" onkeydown="return tab_btn1901(event,getElementById('calle'),getElementById('nro'),getElementById('piso'),getElementById('dpto'),getElementById('barrio'))" disabled >
+            Calle:<input type="text" class="texto" style="width: 59%" name="calle" id="calle"  value = "<?php print $calle ?>" tabindex="6" oninput="checkLengthe()" onchange="return tab_btn1901(event,getElementById('calle'),getElementById('nro'),getElementById('piso'),getElementById('dpto'),getElementById('barrio'))" disabled >
         </th>
         <th colspan="1"  style="text-align: justify;">
            &nbsp;&nbsp; Nro:&nbsp; <input type="text" class="entero" style="width: 50%"  maxlength="10" name="nro" id="nro"  value = "<?php print $nro ?>" tabindex="7"  onkeydown="return tab_btn2(event,getElementById('nro'),getElementById('barrio'),getElementById('piso'))" disabled>
@@ -1309,11 +1309,12 @@ return true;
 
   }
 
-   function tab_btn1barrio(event,q1,q2,q3)
+   function tab_btn1barrio(event,q1,q2,q3,q4)
 {
   var x1=q1;
   var x2=q2;
   var x3=q3;
+  var x4=q4;
 
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
@@ -1321,6 +1322,10 @@ return true;
   { 
   x2.disabled=false;
   x3.disabled=false;
+if(x4.value.length >= 1 )
+{
+x4.disabled=false;
+}
 
   x2.focus();
   aux=x2.value;
@@ -1383,7 +1388,7 @@ window.location = str2.concat(product);
   x2.value=aux;
   return false;
   }
-  else
+  if (t == 9 && x1.value == '' ) 
   {
     x5.focus();
       aux=x5.value;

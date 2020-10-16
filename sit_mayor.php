@@ -1468,7 +1468,7 @@ else{ponleFocus1();}
   var q4 = document.getElementById('q4');
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value==2 ) 
+  if ((t == 9 || t== 13) && x1.value==2 ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1477,7 +1477,7 @@ else{ponleFocus1();}
   x2.value=aux;
   return false;
   }
-    if (t == 9 && x1.value==1 ) 
+    if ((t == 9 || t== 13) && x1.value==1 ) 
   { 
   x3.disabled=false;
   x3.focus();
@@ -1507,7 +1507,7 @@ return true;
   var q4 = document.getElementById('q4');
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value==2 ) 
+  if ((t == 9 || t== 13) && x1.value==2 ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1516,7 +1516,7 @@ return true;
   x2.value=aux;
   return false;
   }
-    if (t == 9 && x1.value==1 ) 
+    if ((t == 9 || t== 13) && x1.value==1 ) 
   { 
   x3.disabled=false;
   x3.focus();
@@ -1544,7 +1544,7 @@ return true;
   var q4 = document.getElementById('q4');
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value==2 ) 
+  if ((t == 9 || t== 13) && x1.value==2 ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1553,7 +1553,7 @@ return true;
   x2.value=aux;
   return false;
   }
-    if (t == 9 && x1.value==1 ) 
+    if ((t == 9 || t== 13) && x1.value==1 ) 
   { 
   x3.disabled=false;
   x3.focus();
@@ -1584,7 +1584,7 @@ return true;
     var q13 = document.getElementById('q13');
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value==2 || x1.value==1) ) 
+  if ((t == 9 || t== 13) && (x1.value==2 || x1.value==1) ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1614,7 +1614,7 @@ return true;
   var x2=q2;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value==2 || x1.value==1 || x1.value==9) ) 
+  if ((t == 9 || t== 13) && (x1.value==2 || x1.value==1 || x1.value==9) ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1634,7 +1634,7 @@ return true;
   var x3=q3;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value==3 ||x1.value==4 ||x1.value==5 ) ) 
+  if ((t == 9 || t== 13) && (x1.value==3 ||x1.value==4 ||x1.value==5 ) ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1643,7 +1643,7 @@ return true;
   x2.value=aux;
   return false;
   }
-    if (t == 9 && (x1.value==1 || x1.value==2 ) ) 
+    if ((t == 9 || t== 13) && (x1.value==1 || x1.value==2 ) ) 
   { 
   x3.disabled=false;
   x3.focus();
@@ -1664,7 +1664,7 @@ function tab_btn4(event,q1,q2,q3)
   var x3=q3;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && (x1.value==2 ||x1.value==9 ) ) 
+  if ((t == 9 || t== 13) && (x1.value==2 ||x1.value==9 ) ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1673,7 +1673,7 @@ function tab_btn4(event,q1,q2,q3)
   x2.value=aux;
   return false;
   }
-    if (t == 9 && x1.value==1 ) 
+    if ((t == 9 || t== 13) && x1.value==1 ) 
   { 
   x3.disabled=false;
   x3.focus();
@@ -1694,7 +1694,7 @@ return true;
   var x3=q3;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value==1 ) 
+  if ((t == 9 || t== 13) && x1.value==1 ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1703,7 +1703,7 @@ return true;
   x2.value=aux;
   return false;
   }
-    if (t == 9 && (x1.value==2 || x1.value==3 ||  x1.value==4  ) ) 
+    if ((t == 9 || t== 13) && (x1.value==2 || x1.value==3 ||  x1.value==4  ) ) 
   { 
   x3.disabled=false;
   x3.focus();
@@ -1722,7 +1722,7 @@ function tab_btn6(event,q1,q2)
   var x2=q2;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value.length >= 1 ) 
+  if ((t == 9 || t== 13) && x1.value.length >= 1 ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1742,7 +1742,7 @@ return true;
   var x3=q3;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value==1 ) 
+  if ((t == 9 || t== 13) && x1.value==1 ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1751,7 +1751,7 @@ return true;
   x2.value=aux;
   return false;
   }
-    if (t == 9 && (x1.value==2 || x1.value==9) ) 
+    if ((t == 9 || t== 13) && (x1.value==2 || x1.value==9) ) 
   { 
   x3.disabled=false;
   x3.focus();
