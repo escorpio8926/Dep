@@ -314,7 +314,7 @@ if (isset($_GET['vdIdi'])) // si la operacion es modificar, este valor viene set
         <tr>
               <th class="sin" rowspan="1"><b>16 ADEMÁS DE SU TRABAJO, ¿SABE ALGÚN OFICIO CON EL CUAL PODRÍA SUSTENTARSE? (construcción, cuidado de personas, cocinar, cultivos, etc.)</b></th>
               <td style="width:3%;border-right: none;background:#9cf;" rowspan="1">
-            <input type="text" class="oby" maxlength="1" name="q16" id="q16" required="" value="<?php print $q16 ?>" oninput="checkLength15()"onkeydown="return tab_btn7(event,getElementById('q16'),getElementById('q17'),getElementById('submitguardar'))" style="width:100%" disabled>
+            <input type="text" class="oby" maxlength="1" name="q16" id="q16" required="" value="<?php print $q16 ?>" oninput="checkLength15()" onkeydown="return tab_btn7(event,getElementById('q16'),getElementById('q17'),getElementById('submitguardar'))" style="width:100%" disabled>
               </td>
              
               <td style="width:38%;border-left:none;background: #9cf;"> 
@@ -333,7 +333,7 @@ if (isset($_GET['vdIdi'])) // si la operacion es modificar, este valor viene set
     <tr>
           <td colspan="3" id="boton">
  <input type="button" onclick="redirect()" style="width:15%;margin-left:12%;" value="Principal" <?php print $disa ?>>
-    <input type="button" onclick="redirect1()" style="width:15%;margin-left:12%;" value="Cancelar" <?php print $disas ?>>
+    <input type="button" id="botonci" onclick="redirect1()" onkeydown="return tab_btncancelar(event,getElementById('botonci'),getElementById('q16'),getElementById('q17'),getElementById('submitguardar'))" style="width:15%;margin-left:12%;" value="Cancelar" <?php print $disas ?>>
             <input type="submit" style="width:15%;margin-left:30%; " name="submit" id="submitguardar" value ="<?php echo $value ?>" disabled>
 
           </td>
@@ -1463,7 +1463,7 @@ else{ponleFocus1();}
   var x2=q2;
   var x3=q3;
 
-  var q2 = document.getElementById('q2');
+
   var q3 = document.getElementById('q3');
   var q4 = document.getElementById('q4');
 
@@ -1485,9 +1485,17 @@ else{ponleFocus1();}
   x3.value="";
   x3.value=aux;
 
-  q2.disabled=false;
-  q3.disabled=false;
-  q4.disabled=false;
+x2.style.display="none"; 
+q3.style.display="none";
+q4.style.display="none"; 
+
+
+      x2.disabled=false;
+
+      q3.disabled=false;
+
+      q4.disabled=false;
+
 
   return false;
   }  
@@ -1525,8 +1533,13 @@ return true;
   x3.value=aux;
 
 
-  q3.disabled=false;
-  q4.disabled=false;
+q3.style.display="none";
+q4.style.display="none"; 
+
+
+      q3.disabled=false;
+
+      q4.disabled=false;
 
   return false;
   }  
@@ -1561,8 +1574,9 @@ return true;
   x3.value="";
   x3.value=aux;
 
-  q4.disabled=false;
+  q4.style.display="none";
 
+  q4.disabled=false;
   return false;
   }  
 return true;
@@ -1591,6 +1605,17 @@ return true;
   aux=x2.value;
   x2.value="";
   x2.value=aux;
+
+
+q5.style.display="none";
+q6.style.display="none";
+q7.style.display="none";
+q8.style.display="none";
+q9.style.display="none";
+q10.style.display="none";
+q11.style.display="none";
+q12.style.display="none";
+q13.style.display="none";
 
 
       q5.disabled=false;
@@ -1633,6 +1658,7 @@ return true;
   var x2=q2;
   var x3=q3;
 
+
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
   if ((t == 9 || t== 13) && (x1.value==3 ||x1.value==4 ||x1.value==5 ) ) 
   { 
@@ -1650,6 +1676,7 @@ return true;
   aux=x3.value;
   x3.value="";
   x3.value=aux;
+  x2.style.display="none";
   x2.disabled=false;
   return false;
   }  
@@ -1680,6 +1707,7 @@ function tab_btn4(event,q1,q2,q3)
   aux=x3.value;
   x3.value="";
   x3.value=aux;
+   x2.style.display="none";
   x2.disabled=false;
   return false;
   }  
@@ -1710,6 +1738,7 @@ return true;
   aux=x3.value;
   x3.value="";
   x3.value=aux;
+  x2.style.display="none";
   x2.disabled=false;
   return false;
   }  
@@ -1735,6 +1764,36 @@ return true;
 
   }
 
+function tab_btncancelar(event,q1,q2,q3,q4)
+{
+  var x1=q1;
+  var x2=q2;
+  var x3=q3;
+  var x4=q4;
+
+  var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+
+
+ if ((t == 9 || t== 13) && (x2.value==2 ||x2.value==9 ) ) 
+  { 
+  x4.disabled=false;
+  x4.focus();
+
+  return false;
+  }
+
+  if ((t == 9 || t== 13) && x2.value == 1 ) 
+  { 
+  x3.disabled=false;
+  x3.focus();
+  aux=x3.value;
+  x3.value="";
+  x3.value=aux;
+  return false;
+  }
+return true;
+
+  }
  function tab_btn7(event,q1,q2,q3)
 {
   var x1=q1;
@@ -1742,7 +1801,7 @@ return true;
   var x3=q3;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if ((t == 9 || t== 13) && x1.value==1 ) 
+  if ((t == 9 || t== 13) && (x1.value==1) ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1759,6 +1818,7 @@ return true;
   x3.value="";
   x3.value=aux;
   x2.disabled=false;
+  x2.style.display="none";
   return false;
   }  
 
