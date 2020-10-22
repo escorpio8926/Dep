@@ -1389,7 +1389,7 @@ function tab_btn(event,p1,p2)
   x2.style.display="none";
   x4.style.display="none";
   x5.style.display="none";
-   x3.disabled=false;
+  x3.disabled=false;
   x3.focus();
     
   return false;
