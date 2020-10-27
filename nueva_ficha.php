@@ -1215,7 +1215,7 @@ return true;
   var x2=q2;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value.length >= 0 ) 
+  if ((t == 9 || t == 13) && x1.value.length >= 0 ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1235,7 +1235,7 @@ return true;
   var x3=q3;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if (t == 9 && x1.value.length >= 0 ) 
+  if ((t == 9 || t == 13) && x1.value.length >= 0 ) 
   {
   x3.disabled=false; 
   x2.disabled=false;
