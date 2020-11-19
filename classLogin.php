@@ -30,7 +30,7 @@ class Login {
          echo $qverifica;
          if($obj_Usuario->num_rows()==0)
             {                      
-               header("Location:Index.php?usuario=no_existe");
+               header("Location:index.php?usuario=no_existe");
             }
         else
             {
