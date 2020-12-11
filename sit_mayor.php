@@ -332,7 +332,7 @@ if (isset($_GET['vdIdi'])) // si la operacion es modificar, este valor viene set
 
     <tr>
           <td colspan="3" id="boton">
- <input type="button" onclick="redirect()" style="width:15%;margin-left:12%;" value="Principal" <?php print $disa ?>>
+ <input type="button" onclick="redirect()" style="width:15%;margin-left:12%;" value="Principal" <?php print $disa ?> onkeydown="return tab_btn42(event,getElementById('q17'),getElementById('submitguardar'))">
     <input type="button" id="botonci" onclick="redirect1()" onkeydown="return tab_btncancelar(event,getElementById('botonci'),getElementById('q16'),getElementById('q17'),getElementById('submitguardar'))" style="width:15%;margin-left:12%;" value="Cancelar" <?php print $disas ?>>
             <input type="submit" style="width:15%;margin-left:30%; " name="submit" id="submitguardar" value ="<?php echo $value ?>" disabled>
 
@@ -1801,7 +1801,7 @@ return true;
   var x3=q3;
 
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-  if ((t == 9 || t== 13) && (x1.value==1) ) 
+  if ((t == 9 || t== 13) && x1.value==1 ) 
   { 
   x2.disabled=false;
   x2.focus();
@@ -1819,6 +1819,31 @@ return true;
   x3.value=aux;
   x2.disabled=false;
   x2.style.display="none";
+  return false;
+  }  
+
+return true;
+
+  }
+
+  function tab_btn42(event,q1,q2)
+{
+  var x1=q1;
+  var x2=q2;
+
+
+  var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+  if ((t == 9 || t== 13) && x1.value.length >= 1 ) 
+  { 
+  x2.disabled=false;
+  x2.focus();
+  return false;
+  }
+    if ((t == 9 || t== 13) && x1.value.length == ""  ) 
+  { 
+  x1.disabled=false;
+  x1.focus();
+
   return false;
   }  
 

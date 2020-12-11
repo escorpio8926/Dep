@@ -133,7 +133,7 @@ if (isset($_GET['mdId'])) // si la operacion es modificar, este valor viene sete
     <tr>
 
         <th colspan="1"  style="text-align: right;">
-            Calle:<input type="text" class="texto" style="width: 59%" name="calle" id="calle"  value = "<?php print $calle ?>" onkeypress="return soloLetras(event)" tabindex="6" oninput="checkLengthe()" onchange="return tab_btn1901(event,getElementById('calle'),getElementById('nro'),getElementById('piso'),getElementById('dpto'),getElementById('barrio'))" disabled >
+            Calle:<input type="text" class="texto" style="width: 59%" name="calle" id="calle"  value = "<?php print $calle ?>" onkeypress="return soloLetras(event)" tabindex="6" oninput="checkLengthe()" onkeydown="return tab_btn1901(event,getElementById('calle'),getElementById('nro'),getElementById('piso'),getElementById('dpto'),getElementById('barrio'))" disabled >
         </th>
         <th colspan="1"  style="text-align: justify;">
            &nbsp;&nbsp; Nro:&nbsp; <input type="text" class="entero" style="width: 50%"  maxlength="10" name="nro" id="nro"  value = "<?php print $nro ?>" tabindex="7"  onkeydown="return tab_btn2(event,getElementById('nro'),getElementById('barrio'),getElementById('piso'))" disabled>
@@ -613,7 +613,7 @@ while ($row=  pg_fetch_array($NuevaFicha)) // recorre los identificaciones uno p
   $dato=pg_num_rows($result);
 
     if($dato!=1){
-    if($row['t_ali']==1 || $row['p_ali']==1 || $row['meren']==1 || $row['muni']==1  ){
+    if($row['t_ali']==1 || $row['p_ali']==1 || $row['meren']==1 || $row['muni']==1 || $row['muni1']==1 || $row['muni2']==1 || $row['muni3']==1 ){/*
         print '<tr>'
         .'<td  height="40">'.$row['id_exp'].'</td>'
         .'<td>'.strftime("%d-%m-%Y", strtotime($row['fecha_ei'])) .'</td>'
@@ -624,9 +624,9 @@ while ($row=  pg_fetch_array($NuevaFicha)) // recorre los identificaciones uno p
 
 //                  .'<td><a href="javascript:;" onclick= avisoj("Salida_Mes.php?crId='.$row['id_salida_mes'].'","'.$row['mes'].'");>Cerrar Salida</a></td>'
         .'</tr>';
-    }
+    )*/}
 
-    if($row['t_ali']==2 && $row['p_ali']==2 &&$row['meren']==2 && $row['muni']==2  ){
+  if($row['t_ali']==2 && $row['p_ali']==2 &&$row['meren']==2 && $row['muni']==2 && $row['muni1']==2 && $row['muni2']==2 && $row['muni3']==2  ){
         print '<tr>'
         .'<td height="40">'.$row['id_exp'].'</td>'
         .'<td>'.strftime("%d-%m-%Y", strtotime($row['fecha_ei'])) .'</td>'
@@ -641,6 +641,7 @@ while ($row=  pg_fetch_array($NuevaFicha)) // recorre los identificaciones uno p
         .'<td><a href="javascript:;" onclick= avisoi("nueva_ficha.php?brId='.$row['id_exp'].'","'.$row['id_exp'].'");>Eliminar Ficha</a></td>'
 //                  .'<td><a href="javascript:;" onclick= avisoj("Salida_Mes.php?crId='.$row['id_salida_mes'].'","'.$row['mes'].'");>Cerrar Salida</a></td>'
         .'</tr>';
+        
     }
    } 
 }
@@ -1038,7 +1039,7 @@ function checkLengthe()
           paso.value="";
           piso.value="";
           dpto.value="";
-            barrio.disabled=false;
+          barrio.disabled=false;
         }
 }
 function checkLengthr()
@@ -1391,6 +1392,7 @@ window.location = str2.concat(product);
   var t = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
   if ((t == 9 || t == 13) && x1.value.length >= 1 ) 
   { 
+
   x2.disabled=false;
   x2.focus();
   aux=x2.value;
@@ -1398,15 +1400,16 @@ window.location = str2.concat(product);
   x2.value=aux;
   return false;
   }
-  if ((t == 9 || t == 13) && x1.value == '' ) 
+  if ((t == 9 || t == 13) && x1.value == "") 
   {
+
   x5.focus();
   aux=x5.value;
   x5.value="";
   x5.value=aux;
-    x2.disabled=false;
-    x3.disabled=false;
-    x4.disabled=false;
+    x2.disabled=true;
+    x3.disabled=true;
+    x4.disabled=true;
     return false;
   }
 return true;
