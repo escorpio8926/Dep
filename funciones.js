@@ -370,8 +370,20 @@ function avisof(url){
     document.location = url;
     return true;
   }
+}function avisoifract(url, id_ficha){
+  m=id_ficha;  
+  if (!confirm("A T E N C I Ó N ! ! ! \n\n\
+    Se procederá a Borrar el Usuario Nro: "+m+" ,todos los datos ingresados para la misma serán eliminados.\n\
+    Si desea continuar y eliminarlo [ACEPTAR], caso contrario [CANCELAR]. ")) 
+  {
+    return false;
+  }
+  else 
+  {
+    document.location = url;
+    return true;
+  }
 }
-
 function avisoi(url, id_ficha){
   m=id_ficha;  
   if (!confirm("A T E N C I Ó N ! ! ! \n\n\

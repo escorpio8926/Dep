@@ -175,10 +175,8 @@ include './ifusuario.php';
         print '<tr>'
         .'<td  height="40">'.$row['apellido'].', '.$row['nombre'].'</td>'
           .'<td>'.$row['username'].'</td>'
-       
         .'<td>'.$row['id_user'].'</td>'
         .'<td>'.$row['id_usuario'].'</td>'
-       
         .'<td>'.$wik.'</td>'
         .'<td colspan="1"><a href="gestionusuario.php?mdId='.$row['id_usuario'].'">Modificar Usuario</a></td>'
         .'<td colspan="1"><a href="javascript:;" onclick= avisoifract("gestionusuario.php?brId='.$row['id_usuario'].'","'.$row['id_usuario'].'");>Eliminar Usuario</a></td>'
